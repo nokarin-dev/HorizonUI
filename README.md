@@ -1,1 +1,1 @@
-# HorizonUI-Java-Edition
+# HorizonUI
