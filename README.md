@@ -17,28 +17,30 @@ Bring a fresh UI experience to Minecraft with HorizonUI and customizable backgro
 
 </div>
 
-****
+---
 
 > [!NOTE]
 > HorizonUI is not affiliated with, endorsed by, or associated with any third-party game, company, or brand.
 
 > [!TIP]
-> Looking for translated README files? You can find them [here](https://github.strivo.xyz/nekoui-download/tree/main/i18n/readme)
+> Looking for translated README files? You can find them [here](https://github.strivo.xyz/HorizonUI-download/tree/main/i18n/readme)
 
-****
+---
 
 ![Installation](https://github.com/nokarin-dev/horizonui/blob/main/assets/Installation_Banner.png?raw=true)
 
 To get started, download the mod .jar file from one of the trusted platforms or official sources below.
 
 ### Trusted Platfroms
+
 > - [CurseForge]
 > - [Modrinth]
 
 ### Official Sources
+
 > - [Website] (Down)
-> 
-****
+
+---
 
 ![Usage](https://github.com/nokarin-dev/horizonui/blob/main/assets/Usage_Banner.png?raw=true)
 
@@ -49,28 +51,31 @@ To get started, download the mod .jar file from one of the trusted platforms or 
 > 5. Launch the game, and HorizonUI should be active!
 
 ### Using a custom launcher?
+
 > If you're using MultiMC, Prism Launcher, GDLauncher, or any custom launcher, simply add the mod to the instance's mods folder, or import it using the launcher’s built-in mod manager.
-> 
-****
+
+---
 
 ![Compability](https://github.com/nokarin-dev/horizonui/blob/main/assets/Compability_Banner.png?raw=true)
 
-NekoUI focuses heavily on UI customization, including layout and background visuals. As a result, **mods that also modify the Minecraft user interface or background rendering** may conflict with HorizonUI.
+HorizonUI focuses heavily on UI customization, including layout and background visuals. As a result, **mods that also modify the Minecraft user interface or background rendering** may conflict with HorizonUI.
 
 Common sources of incompatibility include:
+
 - Mods that overhaul or replace the main menu or HUD elements.
 - Shader-related mods that modify UI layers or apply post-processing to 2D elements.
 - Mods that change how background images or textures are loaded and rendered.
 
 If you are experiencing issues such as overlapping elements, broken backgrounds, or UI not appearing as expected, please review your mod list for potential conflicts with UI-altering mods.
 
-****
+---
 
 ![Recommendations](https://github.com/nokarin-dev/horizonui/blob/main/assets/Recommendations_Banner.png?raw=true)
 
-To enhance your UI experience while using NekoUI, it is highly recommended to install **font customization mods** that replace the default Minecraft font.
+To enhance your UI experience while using HorizonUI, it is highly recommended to install **font customization mods** that replace the default Minecraft font.
 
 Suggested mods:
+
 - [BetterFonts](https://www.curseforge.com/minecraft/mc-mods/betterfonts)
 - [Smooth Font](https://www.curseforge.com/minecraft/mc-mods/smooth-font)
 - [Caxton](https://modrinth.com/mod/caxton)
@@ -78,41 +83,48 @@ Suggested mods:
 
 Using a modern font will significantly improve readability and the overall visual consistency of the interface customized by HorizonUI.
 
-****
+---
 
 ![FAQ](https://github.com/nokarin-dev/horizonui/blob/main/assets/FAQ_Banner.png?raw=true)
 
 <details>
 <summary><strong>Open Here</strong></summary>
 
-- **Why isn't the animated background showing up?**  
+- **Why isn't the animated background showing up?**
+
   - Animated backgrounds are not bundled with the mod due to file size. You can download them separately from [Han's Official Discord Server] or make it manually.
 
-- **I've downloaded the animated background, but it's still not showing on the title screen. Why?**  
-  - Make sure you've enabled the background resource pack in the *Resource Packs* menu. Then, go to the mod configuration screen to select your desired background.
+- **I've downloaded the animated background, but it's still not showing on the title screen. Why?**
 
-- **What's the minimum system requirement to run this mod smoothly?**  
+  - Make sure you've enabled the background resource pack in the _Resource Packs_ menu. Then, go to the mod configuration screen to select your desired background.
+
+- **What's the minimum system requirement to run this mod smoothly?**
+
   - We recommend allocating at least 4–6 GB of RAM, and using a processor equivalent to Intel Core i5 8th Gen or better with an integrated GPU.
 
-- **Where do I report bugs or issues?**  
+- **Where do I report bugs or issues?**
+
   - Please report any bugs or issues on the [HorizonUI GitHub Repository].
 
-- **Is HorizonUI compatible with other UI or shader mods?**  
+- **Is HorizonUI compatible with other UI or shader mods?**
+
   - HorizonUI aims to be compatible with most mods, but UI or shader mods may conflict. If you find issues, try disabling other mods temporarily or report the conflict to us.
 
-- **How do I reset HorizonUI settings to default?**  
-  - You can delete the NekoUI configuration file found in the `config/horizonui` folder within your Minecraft directory.
+- **How do I reset HorizonUI settings to default?**
 
-- **Does HorizonUI support older versions of Minecraft?**  
+  - You can delete the HorizonUI configuration file found in the `config/horizonui` folder within your Minecraft directory.
+
+- **Does HorizonUI support older versions of Minecraft?**
   - Yes, but updates are released gradually per version. If your version isn't supported yet, please wait for upcoming releases.
 
 </details>
 
-****
+---
 
 ![Credits](https://github.com/nokarin-dev/horizonui/blob/main/assets/Credits_Banner.png?raw=true)
 
 Huge thanks to everyone involved in making HorizonUI possible:
+
 - **nokarin** (Mod Developers, Code QC, UI Designer, Translator, Mod Tester)
 - **Han's** (Founder, Translator, UI Designer)
 - **AetherLumine** (Translator)
@@ -120,7 +132,8 @@ Huge thanks to everyone involved in making HorizonUI possible:
 - **ExplerHD** (Mod Tester)
 - **noxzym** (Mod Tester)
 - **alfaruqi** (Translator for arabic, brazil, mexican, italian, german, and georgian)
-****
+
+---
 
 ![License](https://github.com/nokarin-dev/horizonui/blob/main/assets/License_Banner.png?raw=true)
 
@@ -133,6 +146,6 @@ HorizonUI: Java Edition is licensed under All Rights Reserved License.
 
 [Modrinth]: https://modrinth.com/mod/horizonui
 [CurseForge]: https://www.curseforge.com/minecraft/mc-mods/horizonui
-[Website]: https://strivo.xyz/project/nekoui/download
-[HorizonUI Github Repository]: https://github.strivo.xyz/nekoui-download/issues
+[Website]: https://strivo.xyz/project/HorizonUI/download
+[HorizonUI Github Repository]: https://github.strivo.xyz/HorizonUI-download/issues
 [Han's Official Discord Server]: https://discord.com/invite/PgfBrGrd9b

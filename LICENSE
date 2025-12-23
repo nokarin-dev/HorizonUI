@@ -9,6 +9,7 @@ Note: This license is based on common principles of “All Rights Reserved” an
 TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 
 1. Definitions:
+
    - "Author" refers to nokarin.
    - "Project" refers to the HorizonUI project, including all associated source code, assets, and documentation.
    - "You" or "Your" refers to any individual or entity using the Project under this License.
@@ -45,32 +46,24 @@ TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
    The Author shall not be held liable for any damages (including data loss, system failure, or other consequences) resulting from the use of the Project.
 
 10. Governing Law:
-   This Agreement is governed by the applicable laws of the Author's country (Indonesia) or the user’s local jurisdiction where appropriate.  
-   Legal disputes may be addressed through the terms of service of the hosting platform (e.g., Modrinth, CurseForge).
+    This Agreement is governed by the applicable laws of the Author's country (Indonesia) or the user’s local jurisdiction where appropriate.  
+    Legal disputes may be addressed through the terms of service of the hosting platform (e.g., Modrinth, CurseForge).
 
 11. Entire Agreement:
-   This document constitutes the entire License agreement between You and the Author regarding the use of the Project.
+    This document constitutes the entire License agreement between You and the Author regarding the use of the Project.
 
 12. Changes to this Agreement:
-   The Author reserves the right to update this License. Material changes will be announced at least 30 days in advance on official channels.
+    The Author reserves the right to update this License. Material changes will be announced at least 30 days in advance on official channels.
 
 13. Attribution and Sharing Guidelines:
-   a. You may show the Project in videos, livestreams, or screenshots, as long as the Project is not the main monetized content.
-   b. You may share the Project only by linking to the official pages (GitHub, Modrinth, CurseForge, etc.).
-   c. Re-uploading the mod is prohibited unless authorized.
-   d. Clear attribution to the Author ("nokarin") is required in any redistributable or public-facing content involving the Project.
+    a. You may show the Project in videos, livestreams, or screenshots, as long as the Project is not the main monetized content.
+    b. You may share the Project only by linking to the official pages (GitHub, Modrinth, CurseForge, etc.).
+    c. Re-uploading the mod is prohibited unless authorized.
+    d. Clear attribution to the Author ("nokarin") is required in any redistributable or public-facing content involving the Project.
 
-14. Contributor Exception
-   This section applies only to the repository "HorizonUI-Resources".
-
-   a. You may contribute original assets to the `assets/` folder, such as translation files or UI variants.
-   b. All contributions must be:
-      - Free of third-party rights
-      - Non-commercial
-      - Compatible with the format and structure of the repository
-   c. By submitting content, You agree that:
-      - The Author has the right to use, modify, and publish your work as part of the Project
-      - No compensation is owed beyond optional credit
-   d. This section does **not** apply to the main HorizonUI codebase or other repositories.
+a. You may contribute original assets to the `assets/` folder, such as translation files or UI variants.
+b. All contributions must be: - Free of third-party rights - Non-commercial - Compatible with the format and structure of the repository
+c. By submitting content, You agree that: - The Author has the right to use, modify, and publish your work as part of the Project - No compensation is owed beyond optional credit
+d. This section does **not** apply to the main HorizonUI codebase or other repositories.
 
 By using the Project, You acknowledge that You have read this Agreement, understand it, and agree to be bound by its terms and conditions.
