@@ -23,7 +23,7 @@ Bring a fresh UI experience to Minecraft with HorizonUI and customizable backgro
 > HorizonUI is not affiliated with, endorsed by, or associated with any third-party game, company, or brand.
 
 > [!TIP]
-> Looking for translated README files? You can find them [here](https://github.strivo.xyz/HorizonUI-download/tree/main/i18n/readme)
+> Looking for translated README files? You can find them [here](https://github.com/nokarin-dev/horizonui/tree/main/i18n/readme)
 
 ---
 
