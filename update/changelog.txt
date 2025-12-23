@@ -1,0 +1,2 @@
+CHANGELOG - HORIZONUI 1.0.0
+[ Initial Release ]
