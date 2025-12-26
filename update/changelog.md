@@ -2,10 +2,8 @@
 
 ## Summary of Changes
 ### Stable Releases
--
 
 ### Beta Releases
--
 
 ## Stable Release Versions
 
