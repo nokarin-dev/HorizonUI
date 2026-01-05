@@ -139,9 +139,9 @@ Huge thanks to everyone involved in making HorizonUI possible:
 
 ```
 HorizonUI: Java Edition is licensed under All Rights Reserved License.
-- © 2025 Han's Projects.
-- © HorizonUI: Java Edition 2025 - All Rights Reserved.
-- © 2019-2025 Strivo Development - All Rights Reserved.
+- © 2026 Han's Projects.
+- © 2026 HorizonUI: Java Edition - All Rights Reserved.
+- © 2019-2026 Strivo Development - All Rights Reserved.
 ```
 
 [Modrinth]: https://modrinth.com/mod/horizonui
