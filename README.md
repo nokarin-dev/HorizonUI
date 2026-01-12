@@ -132,6 +132,7 @@ Huge thanks to everyone involved in making HorizonUI possible:
 - **ExplerHD** (Mod Tester)
 - **noxzym** (Mod Tester)
 - **alfaruqi** (Translator for arabic, brazil, mexican, italian, german, and georgian)
+- **yunfan_adofai** (Translator for chinese)
 
 ---
 

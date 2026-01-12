@@ -123,15 +123,16 @@ Penggunaan font modern akan secara signifikan meningkatkan keterbacaan dan konsi
 
 ![Credits](https://github.com/nokarin-dev/horizonui/blob/main/assets/Credits_Banner.png?raw=true)
 
-> Terima kasih yang sebesar-besarnya kepada semua yang terlibat dalam pembuatan HorizonUI:
->
-> - nokarin (Pengembang Mod, Penguji Kode, Desainer Antarmuka Pengguna, Penerjemah, Penguji Mod)
-> - Han's (Penemu, Penerjemah, Desainer Antarmuka Pengguna)
-> - AetherLumine (Penerjemah)
-> - howtoscriptinpython (Penerjemah untuk Rusia & Ukraina)
-> - ExplerHD (Penguji Mod)
-> - noxzym (Penguji Mod)
-> - alfaruqi (Penerjemah untuk arab, brazil, mexico, italia, jerman, and georgia)
+Terima kasih yang sebesar-besarnya kepada semua yang terlibat dalam pembuatan HorizonUI:
+
+- **nokarin** (Pengembang Mod, Penguji Kode, Desainer Antarmuka Pengguna, Penerjemah, Penguji Mod)
+- **Han's** (Penemu, Penerjemah, Desainer Antarmuka Pengguna)
+- **AetherLumine** (Penerjemah)
+- **howtoscriptinpython** (Penerjemah untuk Rusia & Ukraina)
+- **ExplerHD** (Penguji Mod)
+- **noxzym** (Penguji Mod)
+- **alfaruqi** (Penerjemah untuk arab, brazil, mexico, italia, jerman, and georgia)
+- **yunfan_adofai** (Penerjemah untuk chinese)
 
 ---
 
