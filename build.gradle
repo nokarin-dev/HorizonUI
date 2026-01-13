@@ -1,0 +1,52 @@
+plugins {
+    id 'java'
+    id "com.gradleup.shadow" version "9.3.1"
+}
+
+group = 'com.nokarin'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    implementation "com.formdev:flatlaf:3.6"
+    implementation "com.google.code.gson:gson:2.11.0"
+    implementation "org.json:json:20231013"
+}
+
+shadowJar {
+    archiveBaseName.set("HorizonUI-Updater")
+    archiveClassifier.set("")
+    manifest {
+        attributes(
+                'Specification-Title'         : project.name,
+                'Specification-Vendor'        : 'Strivo Development',
+                'Specification-Version'       : version,
+                'Implementation-Title'        : project.name,
+                'Implementation-Version'      : version,
+                'Implementation-Vendor'       : 'Strivo Development',
+                'Implementation-Timestamp'    : new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+                'Timestamp'                   : System.currentTimeMillis(),
+                'Built-On-Java'               : "${System.getProperty('java.vm.version')} (${System.getProperty('java.vm.vendor')})",
+                "Main-Class"                  : "com.nokarin.Main"
+        )
+    }
+
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+jar.enabled = false
+
+test {
+    useJUnitPlatform()
+}
