@@ -19,7 +19,7 @@ Hadirkan pengalaman antarmuka pengguna (UI) yang segar di Minecraft dengan Horiz
 
 ---
 
-> [!NOTE]
+> [!IMPORTANT]
 > Proyek ini tidak berafiliasi dengan, didukung oleh, atau terkait dengan game, perusahaan, atau merek pihak ketiga mana pun.
 
 > [!TIP]

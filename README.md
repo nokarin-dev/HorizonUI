@@ -19,7 +19,7 @@ Bring a fresh UI experience to Minecraft with HorizonUI and customizable backgro
 
 ---
 
-> [!NOTE]
+> [!IMPORTANT]
 > HorizonUI is not affiliated with, endorsed by, or associated with any third-party game, company, or brand.
 
 > [!TIP]
