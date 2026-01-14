@@ -37,7 +37,7 @@ public class UpdaterWindow extends JFrame {
 
         // Main panel with banner
         JPanel mainPanel = new JPanel(new BorderLayout());
-        mainPanel.setBackground(new Color(163, 176, 208));
+        mainPanel.setBackground(new Color(233, 190, 249));
 
         mainPanel.add(createBannerPanel(), BorderLayout.CENTER);
         mainPanel.add(createBottomPanel(), BorderLayout.SOUTH);
@@ -47,7 +47,7 @@ public class UpdaterWindow extends JFrame {
 
     private JPanel createBannerPanel() {
         JPanel panel = new JPanel(new BorderLayout());
-        panel.setBackground(new Color(163, 176, 208));
+        panel.setBackground(new Color(233, 190, 249));
 
         JLabel banner = new JLabel();
         banner.setHorizontalAlignment(JLabel.CENTER);
@@ -66,7 +66,7 @@ public class UpdaterWindow extends JFrame {
 
     private JPanel createBottomPanel() {
         JPanel bottom = new JPanel();
-        bottom.setBackground(new Color(166, 177, 223));
+        bottom.setBackground(new Color(233, 190, 249));
         bottom.setPreferredSize(new Dimension(1200, 75));
         bottom.setLayout(new BoxLayout(bottom, BoxLayout.Y_AXIS));
 
@@ -97,7 +97,7 @@ public class UpdaterWindow extends JFrame {
 
         progressBar = new JProgressBar(0, 100);
         progressBar.setPreferredSize(new Dimension(1200, 40));
-        progressBar.setForeground(new Color(129, 68, 249));
+        progressBar.setForeground(new Color(248, 103, 251));
         progressBar.setBackground(Color.WHITE);
 
         progressBar.setUI(new BasicProgressBarUI() {
