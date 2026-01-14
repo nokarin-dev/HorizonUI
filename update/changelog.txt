@@ -1,2 +1,15 @@
-CHANGELOG - HORIZONUI 1.0.0
-[ Initial Release ]
+CHANGELOG - HORIZONUI 1.0.0-BETA - Initial Release
+[ UI & LAYOUT ]
+- New title screen UI
+
+[ Config ]
+- Auto-update toggle in settings
+
+[ Updater ]
+- Update notification system
+
+[ Background ]
+- ImageSTB-based image rendering implementation
+
+[ Mixins ]
+- Crash caused by Forge mixin conflicts
