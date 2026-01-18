@@ -4,12 +4,12 @@
 ### Stable Releases
 
 ### Beta Releases
-- **(TBA. 2026)** - Initial beta release. Fixed Forge mixin-related crash. Implemented ImageSTB rendering. Introduced new title screen UI. Added auto-update toggle. Added update notification system.
+- **v1.0.0 (18/01/2026)** - Initial beta release. Fixed Forge mixin-related crash. Implemented ImageSTB rendering. Introduced new title screen UI. Added auto-update toggle. Added update notification system.
 
 ## Stable Release Versions
 
 ## Beta Release Versions
-## HorizonUI 1.0.0-BETA (TBA 2026) - Initial Release
+## HorizonUI 1.0.0-BETA (18/01/2026) - Initial Release
 ### UI & Layout
 - New title screen UI
 
