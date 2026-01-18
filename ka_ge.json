@@ -1,0 +1,30 @@
+{
+  "horizonui.menu.play": "თამაში",
+  "horizonui.menu.multiplayer": "მულტიპლეიერი",
+  "horizonui.menu.options": "პარამეტრები",
+  "horizonui.menu.mods": "მოდები",
+  "horizonui.menu.close": "თამაშის დახურვა",
+  "horizonui.menu.realms": "რეალმები",
+  "horizonui.menu.clean_mode": "სუფთა რეჟიმი",
+  "horizonui.menu.discord": "Join HorizonUI Discord Server.",
+  "horizonui.menu.support": "Support me on ko-fi.",
+  "horizonui.menu.feedback": "Feedback about HorizonUI.",
+  "horizonui.menu.beta": "This Is Beta Version Of HorizonUI: Java.",
+
+  "horizonui.config.gui.reset.all": "გადატვირთვა",
+  "horizonui.config.back": "უკან",
+  "horizonui.config.prev": "წინა",
+  "horizonui.config.next": "შემდეგი",
+  "horizonui.config.title": "ფონის არჩევა",
+  "horizonui.config.background.apply": "ფონის გამოყენება",
+
+  "horizonui.options.credits": "Credits",
+
+  "horizonui.rpc.connect": "Discord RPC დაკავშირებულია.",
+  "horizonui.rpc.loaded": "Discord RPC ჩატვირთულია (შესული როგორც %2$s)",
+  "horizonui.rpc.error.update": "არ შეიძლება presence-ის განახლება, Discord-თან არ არის კავშირი.",
+  "horizonui.rpc.error.connection": "Discord RPC-სთან კავშირი ვერ მოხერხდა.",
+  "horizonui.rpc.error.client": "Discord კლიენტი არ მოიძებნა.",
+  "horizonui.rpc.error.ipc": "Discord RPC ვერ ჩაიტვირთა და გამოირთო: %1$s",
+  "horizonui.rpc.close": "Discord RPC-ის გამორთვა..."
+}

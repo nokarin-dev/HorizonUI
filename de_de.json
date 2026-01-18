@@ -1,0 +1,30 @@
+{
+  "horizonui.menu.play": "Spielen",
+  "horizonui.menu.multiplayer": "Mehrspieler",
+  "horizonui.menu.options": "Optionen",
+  "horizonui.menu.mods": "Mods",
+  "horizonui.menu.close": "Spiel Schließen",
+  "horizonui.menu.realms": "Realms",
+  "horizonui.menu.clean_mode": "Sauberer Modus",
+  "horizonui.menu.discord": "Join HorizonUI Discord Server.",
+  "horizonui.menu.support": "Support me on ko-fi.",
+  "horizonui.menu.feedback": "Feedback about HorizonUI.",
+  "horizonui.menu.beta": "This Is Beta Version Of HorizonUI: Java.",
+
+  "horizonui.config.gui.reset.all": "Zurücksetzen",
+  "horizonui.config.back": "Zurück",
+  "horizonui.config.prev": "Vorherige",
+  "horizonui.config.next": "Nächste",
+  "horizonui.config.title": "Hintergrund Auswahl",
+  "horizonui.config.background.apply": "Hintergrund Anwenden",
+
+  "horizonui.options.credits": "Credits",
+
+  "horizonui.rpc.connect": "Discord RPC verbunden.",
+  "horizonui.rpc.loaded": "Discord RPC geladen (Angemeldet als %2$s)",
+  "horizonui.rpc.error.update": "Kann Anwesenheit nicht aktualisieren, nicht mit Discord verbunden.",
+  "horizonui.rpc.error.connection": "Verbindung zu Discord RPC fehlgeschlagen.",
+  "horizonui.rpc.error.client": "Kein Discord Client erkannt.",
+  "horizonui.rpc.error.ipc": "Discord RPC konnte nicht geladen werden und wurde heruntergefahren: %1$s",
+  "horizonui.rpc.close": "Discord RPC herunterfahren..."
+}

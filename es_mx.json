@@ -1,0 +1,29 @@
+{
+  "horizonui.menu.play": "Jugar",
+  "horizonui.menu.multiplayer": "Multijugador",
+  "horizonui.menu.options": "Opciones",
+  "horizonui.menu.mods": "Mods",
+  "horizonui.menu.close": "Cerrar Juego",
+  "horizonui.menu.realms": "Realms",
+  "horizonui.menu.clean_mode": "Modo Limpio",
+  "horizonui.menu.discord": "Join HorizonUI Discord Server.",
+  "horizonui.menu.support": "Support me on ko-fi.",
+  "horizonui.menu.feedback": "Feedback about HorizonUI.",
+  "horizonui.menu.beta": "This Is Beta Version Of HorizonUI: Java.",
+
+  "horizonui.config.gui.reset.all": "Reiniciar",
+  "horizonui.config.back": "Regresar",
+  "horizonui.config.prev": "Anterior",
+  "horizonui.config.next": "Siguiente",
+  "horizonui.config.title": "Selección de Fondo",
+
+  "horizonui.options.credits": "Credit",
+
+  "horizonui.rpc.connect": "Discord RPC conectado.",
+  "horizonui.rpc.loaded": "Discord RPC cargado (Conectado como %2$s)",
+  "horizonui.rpc.error.update": "No se puede actualizar la presencia, no conectado a Discord.",
+  "horizonui.rpc.error.connection": "Error al conectar con Discord RPC.",
+  "horizonui.rpc.error.client": "No se detectó ningún cliente de Discord.",
+  "horizonui.rpc.error.ipc": "Discord RPC falló al cargar y se ha cerrado: %1$s",
+  "horizonui.rpc.close": "Cerrando Discord RPC..."
+}

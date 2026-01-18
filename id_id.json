@@ -1,0 +1,30 @@
+{
+  "horizonui.menu.play": "Main",
+  "horizonui.menu.multiplayer": "Multipemain",
+  "horizonui.menu.options": "Options",
+  "horizonui.menu.mods": "Mods",
+  "horizonui.menu.close": "Tutup Game",
+  "horizonui.menu.realms": "Realms",
+  "horizonui.menu.clean_mode": "Mode Bersih",
+  "horizonui.menu.discord": "Join Discord Server HorizonUI.",
+  "horizonui.menu.support": "Support saya di ko-fi.",
+  "horizonui.menu.feedback": "Feedback HorizonUI.",
+  "horizonui.menu.beta": "Ini Adalah Versi Beta HorizonUI: Java.",
+
+  "horizonui.config.gui.reset.all": "Reset",
+  "horizonui.config.back": "Kembali",
+  "horizonui.config.prev": "Sebelumnya",
+  "horizonui.config.next": "Selanjutnya",
+  "horizonui.config.title": "Pemilihan Background",
+  "horizonui.config.background.apply": "Menggunakan Background",
+
+  "horizonui.options.credits": "Kredit",
+
+  "horizonui.rpc.connect": "Discord RPC connected.",
+  "horizonui.rpc.loaded": "Loaded Discord RPC (Logged in as %2$s)",
+  "horizonui.rpc.error.update": "Cannot update presence, not connected to Discord.",
+  "horizonui.rpc.error.connection": "Failed to connect to Discord RPC.",
+  "horizonui.rpc.error.client": "No Discord client detected.",
+  "horizonui.rpc.error.ipc": "Discord RPC Failed to load, and has been shutdown: %1$s",
+  "horizonui.rpc.close": "Shut Down Discord RPC..."
+}

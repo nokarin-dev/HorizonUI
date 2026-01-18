@@ -1,0 +1,30 @@
+{
+  "horizonui.menu.play": "Jogar",
+  "horizonui.menu.multiplayer": "Multijogador",
+  "horizonui.menu.options": "Opções",
+  "horizonui.menu.mods": "Mods",
+  "horizonui.menu.close": "Fechar Jogo",
+  "horizonui.menu.realms": "Realms",
+  "horizonui.menu.clean_mode": "Modo Limpo",
+  "horizonui.menu.discord": "Join HorizonUI Discord Server.",
+  "horizonui.menu.support": "Support me on ko-fi.",
+  "horizonui.menu.feedback": "Feedback about HorizonUI.",
+  "horizonui.menu.beta": "This Is Beta Version Of HorizonUI: Java.",
+
+  "horizonui.config.gui.reset.all": "Resetar",
+  "horizonui.config.back": "Voltar",
+  "horizonui.config.prev": "Anterior",
+  "horizonui.config.next": "Próximo",
+  "horizonui.config.title": "Seleção de Fundo",
+  "horizonui.config.background.apply": "Aplicar Fundo",
+
+  "horizonui.options.credits": "Credits",
+
+  "horizonui.rpc.connect": "Discord RPC conectado.",
+  "horizonui.rpc.loaded": "Discord RPC carregado (Logado como %2$s)",
+  "horizonui.rpc.error.update": "Não é possível atualizar presença, não conectado ao Discord.",
+  "horizonui.rpc.error.connection": "Falha ao conectar ao Discord RPC.",
+  "horizonui.rpc.error.client": "Nenhum cliente Discord detectado.",
+  "horizonui.rpc.error.ipc": "Discord RPC falhou ao carregar e foi desligado: %1$s",
+  "horizonui.rpc.close": "Desligando Discord RPC..."
+}

@@ -1,0 +1,30 @@
+{
+  "horizonui.menu.play": "لعب",
+  "horizonui.menu.multiplayer": "متعدد اللاعبين",
+  "horizonui.menu.options": "الخيارات",
+  "horizonui.menu.mods": "التعديلات",
+  "horizonui.menu.close": "إغلاق اللعبة",
+  "horizonui.menu.realms": "العوالم",
+  "horizonui.menu.clean_mode": "الوضع النظيف",
+  "horizonui.menu.discord": "Join HorizonUI Discord Server.",
+  "horizonui.menu.support": "Support me on ko-fi.",
+  "horizonui.menu.feedback": "Feedback about HorizonUI.",
+  "horizonui.menu.beta": "This Is Beta Version Of HorizonUI: Java.",
+
+  "horizonui.config.gui.reset.all": "إعادة تعيين",
+  "horizonui.config.back": "رجوع",
+  "horizonui.config.prev": "السابق",
+  "horizonui.config.next": "التالي",
+  "horizonui.config.title": "اختيار الخلفية",
+  "horizonui.config.background.apply": "تطبيق الخلفية",
+
+  "horizonui.options.credits": "Credits",
+  
+  "horizonui.rpc.connect": "تم الاتصال بـ Discord RPC.",
+  "horizonui.rpc.loaded": "تم تحميل Discord RPC (تم تسجيل الدخول كـ %2$s)",
+  "horizonui.rpc.error.update": "لا يمكن تحديث الحالة، غير متصل بـ Discord.",
+  "horizonui.rpc.error.connection": "فشل في الاتصال بـ Discord RPC.",
+  "horizonui.rpc.error.client": "لم يتم اكتشاف عميل Discord.",
+  "horizonui.rpc.error.ipc": "فشل في تحميل Discord RPC، وتم إيقافه: %1$s",
+  "horizonui.rpc.close": "إيقاف Discord RPC..."
+}

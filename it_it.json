@@ -1,0 +1,30 @@
+{
+  "horizonui.menu.play": "Gioca",
+  "horizonui.menu.multiplayer": "Multigiocatore",
+  "horizonui.menu.options": "Opzioni",
+  "horizonui.menu.mods": "Mod",
+  "horizonui.menu.close": "Chiudi Gioco",
+  "horizonui.menu.realms": "Reami",
+  "horizonui.menu.clean_mode": "Modalità Pulita",
+  "horizonui.menu.discord": "Join HorizonUI Discord Server.",
+  "horizonui.menu.support": "Support me on ko-fi.",
+  "horizonui.menu.feedback": "Feedback about HorizonUI.",
+  "horizonui.menu.beta": "This Is Beta Version Of HorizonUI: Java.",
+
+  "horizonui.config.gui.reset.all": "Ripristina",
+  "horizonui.config.back": "Indietro",
+  "horizonui.config.prev": "Precedente",
+  "horizonui.config.next": "Successivo",
+  "horizonui.config.title": "Selezione Sfondo",
+  "horizonui.config.background.apply": "Applica Sfondo",
+
+  "horizonui.options.credits": "Credits",
+  
+  "horizonui.rpc.connect": "Discord RPC connesso.",
+  "horizonui.rpc.loaded": "Discord RPC caricato (Connesso come %2$s)",
+  "horizonui.rpc.error.update": "Impossibile aggiornare la presenza, non connesso a Discord.",
+  "horizonui.rpc.error.connection": "Connessione a Discord RPC fallita.",
+  "horizonui.rpc.error.client": "Nessun client Discord rilevato.",
+  "horizonui.rpc.error.ipc": "Discord RPC non è riuscito a caricare ed è stato spento: %1$s",
+  "horizonui.rpc.close": "Spegnimento Discord RPC..."
+}
