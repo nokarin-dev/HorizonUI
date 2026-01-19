@@ -1,100 +1,119 @@
 {
     "homepage": "https://modrinth.com/mod/horizonui/versions",
     "promos": {
-        "1.21.11-latest": "v1.0.0-beta",
-        "1.21.11-recommended": "v1.0.0-beta",
-        "1.21.10-latest": "v1.0.0-beta",
-        "1.21.10-recommended": "v1.0.0-beta",
-        "1.21.9-latest": "v1.0.0-beta",
-        "1.21.9-recommended": "v1.0.0-beta",
-        "1.21.8-latest": "v1.0.0-beta",
-        "1.21.8-recommended": "v1.0.0-beta",
-        "1.21.7-latest": "v1.0.0-beta",
-        "1.21.7-recommended": "v1.0.0-beta",
-        "1.21.6-latest": "v1.0.0-beta",
-        "1.21.6-recommended": "v1.0.0-beta",
-        "1.21.5-latest": "v1.0.0-beta",
-        "1.21.5-recommended": "v1.0.0-beta",
-        "1.21.4-latest": "v1.0.0-beta",
-        "1.21.4-recommended": "v1.0.0-beta",
-        "1.21.3-latest": "v1.0.0-beta",
-        "1.21.3-recommended": "v1.0.0-beta",
-        "1.21.2-latest": "v1.0.0-beta",
-        "1.21.2-recommended": "v1.0.0-beta",
-        "1.21.1-latest": "v1.0.0-beta",
-        "1.21.1-recommended": "v1.0.0-beta",
-        "1.21-latest": "v1.0.0-beta",
-        "1.21-recommended": "v1.0.0-beta",
-        "1.20.6-latest": "v1.0.0-beta",
-        "1.20.6-recommended": "v1.0.0-beta",
-        "1.20.5-latest": "v1.0.0-beta",
-        "1.20.5-recommended": "v1.0.0-beta",
-        "1.20.4-latest": "v1.0.0-beta",
-        "1.20.4-recommended": "v1.0.0-beta",
-        "1.20.3-latest": "v1.0.0-beta",
-        "1.20.3-recommended": "v1.0.0-beta",
-        "1.20.2-latest": "v1.0.0-beta",
-        "1.20.2-recommended": "v1.0.0-beta",
-        "1.20.1-latest": "v1.0.0-beta",
-        "1.20.1-recommended": "v1.0.0-beta",
-        "1.20-latest": "v1.0.0-beta",
-        "1.20-recommended": "v1.0.0-beta"
+        "1.21.11-latest": "v1.0.0-beta.1",
+        "1.21.11-recommended": "v1.0.0-beta.1",
+        "1.21.10-latest": "v1.0.0-beta.1",
+        "1.21.10-recommended": "v1.0.0-beta.1",
+        "1.21.9-latest": "v1.0.0-beta.1",
+        "1.21.9-recommended": "v1.0.0-beta.1",
+        "1.21.8-latest": "v1.0.0-beta.1",
+        "1.21.8-recommended": "v1.0.0-beta.1",
+        "1.21.7-latest": "v1.0.0-beta.1",
+        "1.21.7-recommended": "v1.0.0-beta.1",
+        "1.21.6-latest": "v1.0.0-beta.1",
+        "1.21.6-recommended": "v1.0.0-beta.1",
+        "1.21.5-latest": "v1.0.0-beta.1",
+        "1.21.5-recommended": "v1.0.0-beta.1",
+        "1.21.4-latest": "v1.0.0-beta.1",
+        "1.21.4-recommended": "v1.0.0-beta.1",
+        "1.21.3-latest": "v1.0.0-beta.1",
+        "1.21.3-recommended": "v1.0.0-beta.1",
+        "1.21.2-latest": "v1.0.0-beta.1",
+        "1.21.2-recommended": "v1.0.0-beta.1",
+        "1.21.1-latest": "v1.0.0-beta.1",
+        "1.21.1-recommended": "v1.0.0-beta.1",
+        "1.21-latest": "v1.0.0-beta.1",
+        "1.21-recommended": "v1.0.0-beta.1",
+        "1.20.6-latest": "v1.0.0-beta.1",
+        "1.20.6-recommended": "v1.0.0-beta.1",
+        "1.20.5-latest": "v1.0.0-beta.1",
+        "1.20.5-recommended": "v1.0.0-beta.1",
+        "1.20.4-latest": "v1.0.0-beta.1",
+        "1.20.4-recommended": "v1.0.0-beta.1",
+        "1.20.3-latest": "v1.0.0-beta.1",
+        "1.20.3-recommended": "v1.0.0-beta.1",
+        "1.20.2-latest": "v1.0.0-beta.1",
+        "1.20.2-recommended": "v1.0.0-beta.1",
+        "1.20.1-latest": "v1.0.0-beta.1",
+        "1.20.1-recommended": "v1.0.0-beta.1",
+        "1.20-latest": "v1.0.0-beta.1",
+        "1.20-recommended": "v1.0.0-beta.1"
     },
     "1.21.11": {
+        "v1.0.0-beta.1": "UI improvements and visual fixes, including layout refinements, banner rendering fixes, and corrected visibility behavior in Clean Mode.",
         "v1.0.0-beta": "Initial beta release. Fixed Forge mixin-related crash. Implemented ImageSTB rendering. Introduced new title screen UI. Added auto-update toggle. Added update notification system."
     },
     "1.21.10": {
+        "v1.0.0-beta.1": "UI improvements and visual fixes, including layout refinements, banner rendering fixes, and corrected visibility behavior in Clean Mode.",
         "v1.0.0-beta": "Initial beta release. Fixed Forge mixin-related crash. Implemented ImageSTB rendering. Introduced new title screen UI. Added auto-update toggle. Added update notification system."
     },
     "1.21.9": {
+        "v1.0.0-beta.1": "UI improvements and visual fixes, including layout refinements, banner rendering fixes, and corrected visibility behavior in Clean Mode.",
         "v1.0.0-beta": "Initial beta release. Fixed Forge mixin-related crash. Implemented ImageSTB rendering. Introduced new title screen UI. Added auto-update toggle. Added update notification system."
     },
     "1.21.8": {
+        "v1.0.0-beta.1": "UI improvements and visual fixes, including layout refinements, banner rendering fixes, and corrected visibility behavior in Clean Mode.",
         "v1.0.0-beta": "Initial beta release. Fixed Forge mixin-related crash. Implemented ImageSTB rendering. Introduced new title screen UI. Added auto-update toggle. Added update notification system."
     },
     "1.21.7": {
+        "v1.0.0-beta.1": "UI improvements and visual fixes, including layout refinements, banner rendering fixes, and corrected visibility behavior in Clean Mode.",
         "v1.0.0-beta": "Initial beta release. Fixed Forge mixin-related crash. Implemented ImageSTB rendering. Introduced new title screen UI. Added auto-update toggle. Added update notification system."
     },
     "1.21.6": {
+        "v1.0.0-beta.1": "UI improvements and visual fixes, including layout refinements, banner rendering fixes, and corrected visibility behavior in Clean Mode.",
         "v1.0.0-beta": "Initial beta release. Fixed Forge mixin-related crash. Implemented ImageSTB rendering. Introduced new title screen UI. Added auto-update toggle. Added update notification system."
     },
     "1.21.5": {
+        "v1.0.0-beta.1": "UI improvements and visual fixes, including layout refinements, banner rendering fixes, and corrected visibility behavior in Clean Mode.",
         "v1.0.0-beta": "Initial beta release. Fixed Forge mixin-related crash. Implemented ImageSTB rendering. Introduced new title screen UI. Added auto-update toggle. Added update notification system."
     },
     "1.21.4": {
+        "v1.0.0-beta.1": "UI improvements and visual fixes, including layout refinements, banner rendering fixes, and corrected visibility behavior in Clean Mode.",
         "v1.0.0-beta": "Initial beta release. Fixed Forge mixin-related crash. Implemented ImageSTB rendering. Introduced new title screen UI. Added auto-update toggle. Added update notification system."
     },
     "1.21.3": {
+        "v1.0.0-beta.1": "UI improvements and visual fixes, including layout refinements, banner rendering fixes, and corrected visibility behavior in Clean Mode.",
         "v1.0.0-beta": "Initial beta release. Fixed Forge mixin-related crash. Implemented ImageSTB rendering. Introduced new title screen UI. Added auto-update toggle. Added update notification system."
     },
     "1.21.2": {
+        "v1.0.0-beta.1": "UI improvements and visual fixes, including layout refinements, banner rendering fixes, and corrected visibility behavior in Clean Mode.",
         "v1.0.0-beta": "Initial beta release. Fixed Forge mixin-related crash. Implemented ImageSTB rendering. Introduced new title screen UI. Added auto-update toggle. Added update notification system."
     },
     "1.21.1": {
+        "v1.0.0-beta.1": "UI improvements and visual fixes, including layout refinements, banner rendering fixes, and corrected visibility behavior in Clean Mode.",
         "v1.0.0-beta": "Initial beta release. Fixed Forge mixin-related crash. Implemented ImageSTB rendering. Introduced new title screen UI. Added auto-update toggle. Added update notification system."
     },
     "1.21": {
+        "v1.0.0-beta.1": "UI improvements and visual fixes, including layout refinements, banner rendering fixes, and corrected visibility behavior in Clean Mode.",
         "v1.0.0-beta": "Initial beta release. Fixed Forge mixin-related crash. Implemented ImageSTB rendering. Introduced new title screen UI. Added auto-update toggle. Added update notification system."
     },
     "1.20.6": {
+        "v1.0.0-beta.1": "UI improvements and visual fixes, including layout refinements, banner rendering fixes, and corrected visibility behavior in Clean Mode.",
         "v1.0.0-beta": "Initial beta release. Fixed Forge mixin-related crash. Implemented ImageSTB rendering. Introduced new title screen UI. Added auto-update toggle. Added update notification system."
     },
     "1.20.5": {
+        "v1.0.0-beta.1": "UI improvements and visual fixes, including layout refinements, banner rendering fixes, and corrected visibility behavior in Clean Mode.",
         "v1.0.0-beta": "Initial beta release. Fixed Forge mixin-related crash. Implemented ImageSTB rendering. Introduced new title screen UI. Added auto-update toggle. Added update notification system."
     },
     "1.20.4": {
+        "v1.0.0-beta.1": "UI improvements and visual fixes, including layout refinements, banner rendering fixes, and corrected visibility behavior in Clean Mode.",
         "v1.0.0-beta": "Initial beta release. Fixed Forge mixin-related crash. Implemented ImageSTB rendering. Introduced new title screen UI. Added auto-update toggle. Added update notification system."
     },
     "1.20.3": {
+        "v1.0.0-beta.1": "UI improvements and visual fixes, including layout refinements, banner rendering fixes, and corrected visibility behavior in Clean Mode.",
         "v1.0.0-beta": "Initial beta release. Fixed Forge mixin-related crash. Implemented ImageSTB rendering. Introduced new title screen UI. Added auto-update toggle. Added update notification system."
     },
     "1.20.2": {
+        "v1.0.0-beta.1": "UI improvements and visual fixes, including layout refinements, banner rendering fixes, and corrected visibility behavior in Clean Mode.",
         "v1.0.0-beta": "Initial beta release. Fixed Forge mixin-related crash. Implemented ImageSTB rendering. Introduced new title screen UI. Added auto-update toggle. Added update notification system."
     },
     "1.20.1": {
+        "v1.0.0-beta.1": "UI improvements and visual fixes, including layout refinements, banner rendering fixes, and corrected visibility behavior in Clean Mode.",
         "v1.0.0-beta": "Initial beta release. Fixed Forge mixin-related crash. Implemented ImageSTB rendering. Introduced new title screen UI. Added auto-update toggle. Added update notification system."
     },
     "1.20": {
+        "v1.0.0-beta.1": "UI improvements and visual fixes, including layout refinements, banner rendering fixes, and corrected visibility behavior in Clean Mode.",
         "v1.0.0-beta": "Initial beta release. Fixed Forge mixin-related crash. Implemented ImageSTB rendering. Introduced new title screen UI. Added auto-update toggle. Added update notification system."
     }
 }

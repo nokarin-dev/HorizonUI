@@ -1,3 +1,18 @@
+
+CHANGELOG - HorizonUI 1.0.0-BETA.1
+[ UI & Layout ]
+- Revamped agreement screen UI.
+- Improved overall UI layout structure.
+- Fixed banner being overlapped by gradient background.
+- Disabled beta notice interaction.
+- Fixed HorizonUI banner visibility issue.
+- Fixed beta notice and feedback button visibility in Clean Mode.
+
+[ Extension ]
+- Added extension detection system.
+
+==================================================================
+
 CHANGELOG - HORIZONUI 1.0.0-BETA - Initial Release
 [ UI & LAYOUT ]
 - New title screen UI
