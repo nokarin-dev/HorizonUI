@@ -19,6 +19,7 @@
   "horizonui.config.background.apply": "Menggunakan Background",
 
   "horizonui.options.credits": "Kredit",
+  "horizonui.options.back": "Kembali",
 
   "horizonui.rpc.connect": "Discord RPC connected.",
   "horizonui.rpc.loaded": "Loaded Discord RPC (Logged in as %2$s)",

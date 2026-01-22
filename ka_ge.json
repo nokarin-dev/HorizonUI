@@ -19,6 +19,7 @@
   "horizonui.config.background.apply": "ფონის გამოყენება",
 
   "horizonui.options.credits": "Credits",
+  "horizonui.options.back": "Back",
 
   "horizonui.rpc.connect": "Discord RPC დაკავშირებულია.",
   "horizonui.rpc.loaded": "Discord RPC ჩატვირთულია (შესული როგორც %2$s)",

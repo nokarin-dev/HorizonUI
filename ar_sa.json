@@ -19,6 +19,7 @@
   "horizonui.config.background.apply": "تطبيق الخلفية",
 
   "horizonui.options.credits": "Credits",
+  "horizonui.options.back": "Back",
   
   "horizonui.rpc.connect": "تم الاتصال بـ Discord RPC.",
   "horizonui.rpc.loaded": "تم تحميل Discord RPC (تم تسجيل الدخول كـ %2$s)",

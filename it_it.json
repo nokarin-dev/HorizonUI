@@ -19,6 +19,7 @@
   "horizonui.config.background.apply": "Applica Sfondo",
 
   "horizonui.options.credits": "Credits",
+  "horizonui.options.back": "Back",
   
   "horizonui.rpc.connect": "Discord RPC connesso.",
   "horizonui.rpc.loaded": "Discord RPC caricato (Connesso come %2$s)",

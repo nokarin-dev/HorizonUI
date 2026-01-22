@@ -19,6 +19,7 @@
   "horizonui.config.background.apply": "Menggunakan Background",
 
   "horizonui.options.credits": "制作团队",
+  "horizonui.options.back": "Back",
 
   "horizonui.rpc.connect": "Discord RPC 已连接。",
   "horizonui.rpc.loaded": "已加载 Discord RPC (以 %2$s 身份登录)",

@@ -18,6 +18,7 @@
   "horizonui.config.title": "Selección de Fondo",
 
   "horizonui.options.credits": "Credit",
+  "horizonui.options.back": "Back",
 
   "horizonui.rpc.connect": "Discord RPC conectado.",
   "horizonui.rpc.loaded": "Discord RPC cargado (Conectado como %2$s)",
