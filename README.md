@@ -56,7 +56,7 @@ You can configure HorizonUI through:
 - The in‑game **Mod Configuration** screen
 - Resource Packs for background customization
 
-Changes are applied in real time or after a screen reload, depending on the setting. ()
+Changes are applied in real time or after a screen reload, depending on the setting.
 
 ---
 

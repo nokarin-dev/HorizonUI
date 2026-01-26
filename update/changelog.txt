@@ -1,6 +1,16 @@
+CHANGELOG - HORIZONUI 1.0.0-BETA.2
+[ BACKGROUND ]
+- Fix lag issue when open another screen.
+- Fix background still render on pause screen.
+- Optimize background render for better performance.
 
-CHANGELOG - HorizonUI 1.0.0-BETA.1
-[ UI & Layout ]
+[ UI / LAYOUT ]
+- Override all minecraft options screen [EXPERIMENTAL].
+
+==================================================================
+
+CHANGELOG - HORIZONUI 1.0.0-BETA.1
+[ UI / LAYOUT ]
 - Revamped agreement screen UI.
 - Improved overall UI layout structure.
 - Fixed banner being overlapped by gradient background.
@@ -8,23 +18,23 @@ CHANGELOG - HorizonUI 1.0.0-BETA.1
 - Fixed HorizonUI banner visibility issue.
 - Fixed beta notice and feedback button visibility in Clean Mode.
 
-[ Extension ]
+[ EXTENSION ]
 - Added extension detection system.
 
 ==================================================================
 
 CHANGELOG - HORIZONUI 1.0.0-BETA - Initial Release
-[ UI & LAYOUT ]
+[ UI / LAYOUT ]
 - New title screen UI
 
-[ Config ]
+[ CONFIG ]
 - Auto-update toggle in settings
 
-[ Updater ]
+[ UPDATER ]
 - Update notification system
 
-[ Background ]
+[ BACKGROUND ]
 - ImageSTB-based image rendering implementation
 
-[ Mixins ]
+[ MIXINS ]
 - Crash caused by Forge mixin conflicts
