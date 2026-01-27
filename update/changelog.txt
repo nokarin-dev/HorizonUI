@@ -1,4 +1,10 @@
-CHANGELOG - HORIZONUI 1.0.0-BETA.2
+CHANGELOG - HORIZONUI 1.0.0-BETA.3 | CRITICAL HOTFIX
+### Mixins
+- Fixed game crash on title screen caused by improper screen initialization.
+
+==================================================================
+
+CHANGELOG - HORIZONUI 1.0.0-BETA.2 | MEDIUM
 [ BACKGROUND ]
 - Fix lag issue when open another screen.
 - Fix background still render on pause screen.
@@ -9,7 +15,7 @@ CHANGELOG - HORIZONUI 1.0.0-BETA.2
 
 ==================================================================
 
-CHANGELOG - HORIZONUI 1.0.0-BETA.1
+CHANGELOG - HORIZONUI 1.0.0-BETA.1 | LOW
 [ UI / LAYOUT ]
 - Revamped agreement screen UI.
 - Improved overall UI layout structure.
@@ -23,7 +29,7 @@ CHANGELOG - HORIZONUI 1.0.0-BETA.1
 
 ==================================================================
 
-CHANGELOG - HORIZONUI 1.0.0-BETA - Initial Release
+CHANGELOG - HORIZONUI 1.0.0-BETA | Initial Release
 [ UI / LAYOUT ]
 - New title screen UI
 
