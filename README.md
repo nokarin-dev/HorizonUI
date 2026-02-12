@@ -10,8 +10,7 @@
 
 [![License](https://img.shields.io/badge/License-ARR-green)](https://github.com/nokarin-dev/HorizonUI/blob/main/LICENSE)
 [![Issues](https://img.shields.io/github/issues/nokarin-dev/horizonui)](https://github.com/nokarin-dev/HorizonUI/issues)
-[![Release](https://img.shields.io/github/v/release/nokarin-dev/horizonui
-)](https://github.com/nokarin-dev/HorizonUI/releases)
+[![Release](https://img.shields.io/github/v/release/nokarin-dev/horizonui)](https://github.com/nokarin-dev/HorizonUI/releases)
 [![Crowdin](https://badges.crowdin.net/horizonui/localized.svg)](https://crowdin.com/project/horizonui)
 [![Github Star](https://img.shields.io/github/stars/nokarin-dev/horizonui)](https://github.com/nokarin-dev/horizonui)
 
