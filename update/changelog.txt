@@ -1,5 +1,18 @@
+CHANGELOG - HORIZONUI 1.0.0-BETA.4
+[ INTEGRATION ]
+- Added Replay Viewer button from ReplayMod.
+- Added button to open Sodium Screen.
+
+[ UI / LAYOUT ]
+- Fixed Auto scroll bug.
+- Fixed Button position corruption.
+- Fixed category switching.
+- Fixed widget event handling.
+
+==================================================================
+
 CHANGELOG - HORIZONUI 1.0.0-BETA.3 | CRITICAL HOTFIX
-### Mixins
+[ MIXINS ]
 - Fixed game crash on title screen caused by improper screen initialization.
 
 ==================================================================
