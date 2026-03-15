@@ -3,8 +3,7 @@ package com.nokarin.handler;
 import com.nokarin.api.ModrinthAPI;
 import com.nokarin.api.VersionInfo;
 import com.nokarin.gui.UpdateState;
-import com.nokarin.util.Logger;
-import com.nokarin.util.VersionComparator;
+import com.nokarin.util.*;
 
 import java.io.File;
 import java.util.function.Consumer;
@@ -50,14 +49,13 @@ public class UpdateHandler {
             return null;
         }
 
-        String current = VersionComparator.normalizeVersion(currentVersion);
-        String latestVer = VersionComparator.normalizeVersion(latest.versionNumber());
-
-        if (VersionComparator.compare(current, latestVer) >= 0) {
-            Logger.info("Already on latest version");
+        File existingFile = new File(modsPath, latest.fileName());
+        if (existingFile.exists()) {
+            Logger.info("Already up to date: " + latest.fileName());
             return null;
         }
 
+        Logger.info("Update found: " + latest.versionNumber());
         return latest;
     }
 
@@ -65,36 +63,57 @@ public class UpdateHandler {
             VersionInfo versionInfo,
             Consumer<UpdateState> callback
     ) throws Exception {
-        Logger.info("Starting update process...");
+        ProgressCalculator calculator = new ProgressCalculator();
 
-        callback.accept(new UpdateState("Preparing update...", 25));
+        fileHandler.ensureModsDirectory(modsPath);
+        calculator.update(UpdateStage.PREPARE, 100);
+        callback.accept(new UpdateState(
+                "Preparing update...",
+                calculator.getTotalProgress(),
+                0,
+                0
+        ));
 
-        if (!fileHandler.ensureModsDirectory(modsPath)) {
-            throw new Exception("Failed to create mods directory");
-        }
-
-        callback.accept(new UpdateState("Removing old versions...", 35));
         fileHandler.deleteOldVersions(modsPath);
+        calculator.update(UpdateStage.DELETE_OLD, 100);
+        callback.accept(new UpdateState(
+                "Removing old versions...",
+                calculator.getTotalProgress(),
+                0,
+                0
+        ));
 
-        callback.accept(new UpdateState("Downloading update...", 50));
         File target = new File(modsPath, versionInfo.fileName());
-
         downloadHandler.downloadFile(
                 versionInfo.downloadUrl(),
                 target.getAbsolutePath(),
-                progress -> callback.accept(
-                        new UpdateState("Downloading update...", progress)
-                )
+                calculator,
+                callback
         );
 
-        callback.accept(new UpdateState("Verifying files...", 90));
-        Thread.sleep(500);
+        calculator.update(UpdateStage.VERIFY, 50);
+        callback.accept(new UpdateState(
+                "Verifying file integrity...",
+                calculator.getTotalProgress(),
+                0,
+                0
+        ));
 
-        callback.accept(new UpdateState("Finalizing installation...", 95));
-        Thread.sleep(300);
+        if (!HashVerifier.verifySHA512(target, versionInfo.sha512())) {
+            target.delete();
+            throw new Exception("Integrity check failed");
+        }
 
-        callback.accept(new UpdateState("Update complete! Restart Minecraft.", 100));
+        calculator.update(UpdateStage.VERIFY, 100);
 
-        Logger.info("Update completed successfully");
+        calculator.update(UpdateStage.FINALIZE, 100);
+        callback.accept(new UpdateState(
+                "Finalizing...",
+                calculator.getTotalProgress(),
+                0,
+                0
+        ));
+
+        Logger.info("Update completed successfully.");
     }
 }

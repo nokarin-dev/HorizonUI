@@ -16,6 +16,8 @@ import java.util.List;
 public class UpdaterWindow extends JFrame {
     private JLabel statusLabel;
     private JProgressBar progressBar;
+    private int animatedProgress = 0;
+    private Timer progressTimer;
 
     private final UpdateHandler updateHandler;
 
@@ -30,6 +32,7 @@ public class UpdaterWindow extends JFrame {
         setTitle("HorizonUI Updater");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setUndecorated(true);
+        setBackground(new Color(0, 0, 0, 0));
         setSize(1200, 600);
         setLocationRelativeTo(null);
         setResizable(false);
@@ -99,6 +102,8 @@ public class UpdaterWindow extends JFrame {
         progressBar.setPreferredSize(new Dimension(1200, 40));
         progressBar.setForeground(new Color(248, 103, 251));
         progressBar.setBackground(Color.WHITE);
+        progressBar.setBorderPainted(false);
+        progressBar.setStringPainted(false);
 
         progressBar.setUI(new BasicProgressBarUI() {
             @Override protected Color getSelectionForeground() { return Color.WHITE; }
@@ -134,15 +139,23 @@ public class UpdaterWindow extends JFrame {
 
                 publish(new UpdateState("Update complete!", 100));
                 Thread.sleep(3000);
-                System.exit(0);
+                SwingUtilities.invokeLater(() -> fadeOutAndExit(0));
                 return null;
             }
 
             @Override
             protected void process(List<UpdateState> chunks) {
                 UpdateState last = chunks.get(chunks.size() - 1);
-                statusLabel.setText(last.message());
-                progressBar.setValue(last.progress());
+                String text = last.message();
+
+                if (last.speedKBps() > 0) {
+                    text += String.format(" | %.2f KB/s | ETA: %ds",
+                            last.speedKBps(),
+                            last.etaSeconds());
+                }
+
+                statusLabel.setText(text);
+                animateProgressTo(last.progress());
             }
 
             @Override
@@ -155,7 +168,7 @@ public class UpdaterWindow extends JFrame {
                     progressBar.setForeground(Color.RED);
                     progressBar.setValue(100);
 
-                    Timer timer = new Timer(5000, ev -> System.exit(1));
+                    Timer timer = new Timer(4000, ev -> fadeOutAndExit(1));
                     timer.setRepeats(false);
                     timer.start();
                 }
@@ -179,5 +192,64 @@ public class UpdaterWindow extends JFrame {
             Logger.error("Failed to load banner image", e);
         }
         return null;
+    }
+
+    private void animateProgressTo(int target) {
+        if (progressTimer != null && progressTimer.isRunning()) {
+            progressTimer.stop();
+        }
+
+        progressTimer = new Timer(10, null);
+        progressTimer.addActionListener(e -> {
+            if (animatedProgress < target) {
+                animatedProgress++;
+            } else if (animatedProgress > target) {
+                animatedProgress--;
+            } else {
+                progressTimer.stop();
+                return;
+            }
+
+            progressBar.setValue(animatedProgress);
+        });
+
+        progressTimer.start();
+    }
+
+    private void fadeIn() {
+        setOpacity(0f);
+
+        Timer timer = new Timer(15, null);
+        timer.addActionListener(e -> {
+            float opacity = getOpacity();
+            opacity += 0.05f;
+
+            if (opacity >= 1f) {
+                setOpacity(1f);
+                timer.stop();
+            } else {
+                setOpacity(opacity);
+            }
+        });
+
+        timer.start();
+    }
+
+    private void fadeOutAndExit(int exitCode) {
+        Timer timer = new Timer(15, null);
+        timer.addActionListener(e -> {
+            float opacity = getOpacity();
+            opacity -= 0.05f;
+
+            if (opacity <= 0f) {
+                setOpacity(0f);
+                timer.stop();
+                System.exit(exitCode);
+            } else {
+                setOpacity(opacity);
+            }
+        });
+
+        timer.start();
     }
 }

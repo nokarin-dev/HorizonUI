@@ -1,12 +1,16 @@
 package com.nokarin.handler;
 
+import com.nokarin.gui.UpdateState;
 import com.nokarin.util.Logger;
+import com.nokarin.util.ProgressCalculator;
+import com.nokarin.util.UpdateStage;
 
 import javax.swing.*;
-import java.io.BufferedInputStream;
-import java.io.FileOutputStream;
+import java.io.*;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.function.Consumer;
 import java.util.function.IntConsumer;
 
 public class DownloadHandler {
@@ -14,35 +18,56 @@ public class DownloadHandler {
 
     public void downloadFile(
             String fileUrl,
-            String outputPath,
-            IntConsumer progressCallback
+            String targetPath,
+            ProgressCalculator calculator,
+            Consumer<UpdateState> callback
     ) throws Exception {
-        Logger.info("Downloading file from: " + fileUrl);
-
         URL url = new URL(fileUrl);
-        URLConnection connection = url.openConnection();
-        int contentLength = connection.getContentLength();
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.connect();
 
-        try (
-                BufferedInputStream in = new BufferedInputStream(connection.getInputStream());
-                FileOutputStream out = new FileOutputStream(outputPath)
-        ) {
+        long totalSize = connection.getContentLengthLong();
+        if (totalSize <= 0) {
+            throw new IOException("Invalid content length");
+        }
+
+        try (InputStream input = new BufferedInputStream(connection.getInputStream());
+             FileOutputStream output = new FileOutputStream(targetPath)) {
             byte[] buffer = new byte[BUFFER_SIZE];
             long downloaded = 0;
-            int read;
 
-            while ((read = in.read(buffer, 0, BUFFER_SIZE)) != -1) {
-                out.write(buffer, 0, read);
-                downloaded += read;
+            long startTime = System.currentTimeMillis();
+            long lastTime = startTime;
 
-                if (contentLength > 0) {
-                    int progress = (int) ((downloaded * 100) / contentLength);
-                    progressCallback.accept(progress);
+            int bytesRead;
+
+            while ((bytesRead = input.read(buffer)) != -1) {
+                output.write(buffer, 0, bytesRead);
+                downloaded += bytesRead;
+
+                long now = System.currentTimeMillis();
+                long elapsed = now - startTime;
+
+                if (elapsed > 0) {
+
+                    int percent = (int) ((downloaded * 100) / totalSize);
+                    calculator.update(UpdateStage.DOWNLOAD, percent);
+
+                    double speed = (downloaded / 1024.0) / (elapsed / 1000.0); // KB/s
+
+                    long remainingBytes = totalSize - downloaded;
+                    long eta = (long) (remainingBytes / (speed * 1024));
+
+                    callback.accept(new UpdateState(
+                            "Downloading update...",
+                            calculator.getTotalProgress(),
+                            speed,
+                            eta
+                    ));
                 }
             }
         }
 
-        progressCallback.accept(100);
-        Logger.info("Download completed");
+        calculator.update(UpdateStage.DOWNLOAD, 100);
     }
 }

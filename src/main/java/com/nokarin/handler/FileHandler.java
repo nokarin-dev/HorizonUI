@@ -19,13 +19,19 @@ public class FileHandler {
 
     public void deleteOldVersions(String modsPath) {
         File dir = new File(modsPath);
-        File[] files = dir.listFiles((d, name) -> name.endsWith(".jar"));
+
+        File[] files = dir.listFiles((d, name) ->
+                name.toLowerCase().startsWith("horizonui")
+                        && name.toLowerCase().endsWith(".jar")
+        );
 
         if (files == null) return;
 
         for (File file : files) {
-            Logger.info("Deleting old file: " + file.getName());
-            file.delete();
+            Logger.info("Deleting old HorizonUI file: " + file.getName());
+            if (!file.delete()) {
+                Logger.error("Failed to delete: " + file.getName());
+            }
         }
     }
 }

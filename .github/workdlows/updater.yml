@@ -1,0 +1,91 @@
+name: Build & Update Updater Release
+
+on:
+  push:
+    branches:
+      - updater
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Build with Gradle
+        run: ./gradlew shadowJar
+
+      - name: Create or update 'updater' release
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const tag = 'updater';
+
+            let releaseId;
+            try {
+              const existing = await github.rest.repos.getReleaseByTag({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                tag: tag
+              });
+              releaseId = existing.data.id;
+              console.log(`Found existing release: ${releaseId}`);
+            } catch (e) {
+              const created = await github.rest.repos.createRelease({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                tag_name: tag,
+                name: 'HorizonUI Updater',
+                body: 'Auto-updated on every push to branch `updater`.',
+                prerelease: false
+              });
+              releaseId = created.data.id;
+              console.log(`Created new release: ${releaseId}`);
+            }
+
+            const assets = await github.rest.repos.listReleaseAssets({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              release_id: releaseId
+            });
+
+            for (const asset of assets.data) {
+              if (asset.name.endsWith('.jar')) {
+                await github.rest.repos.deleteReleaseAsset({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  asset_id: asset.id
+                });
+                console.log(`Deleted: ${asset.name}`);
+              }
+            }
+
+            const targetDir = 'build/libs';
+            const jarFiles = fs.readdirSync(targetDir)
+              .filter(f => f.startsWith('HorizonUI.Updater') && f.endsWith('.jar'));
+
+            if (jarFiles.length === 0) throw new Error('No JAR found in target/');
+
+            const jarName = jarFiles[0];
+            const jarData = fs.readFileSync(path.join(targetDir, jarName));
+
+            await github.rest.repos.uploadReleaseAsset({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              release_id: releaseId,
+              name: jarName,
+              data: jarData
+            });
+
+            console.log(`Uploaded: ${jarName}`);
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

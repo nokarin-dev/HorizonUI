@@ -49,7 +49,9 @@ public class ModrinthAPI {
                 String downloadUrl = file.getString("url");
                 String fileName = file.getString("filename");
                 String versionNumber = version.getString("version_number");
-                return new VersionInfo(downloadUrl, fileName, versionNumber);
+                String sha512 = file.getJSONObject("hashes").getString("sha512");
+
+                return new VersionInfo(downloadUrl, fileName, versionNumber, sha512);
             }
         }
         

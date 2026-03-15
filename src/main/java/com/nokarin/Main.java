@@ -1,6 +1,8 @@
 package com.nokarin;
 
 import com.nokarin.gui.UpdaterWindow;
+import com.nokarin.handler.SelfUpdate;
+
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
@@ -10,7 +12,9 @@ public class Main {
         String mcVersion = args[1];
         String loader = args[2];
         String versionState = args[3];
-        String modsPath = args[4];
+        String instancePath = args[4];
+
+        new SelfUpdate(instancePath).checkAndUpdateAsync();
 
         SwingUtilities.invokeLater(() -> {
             try {
@@ -19,7 +23,7 @@ public class Main {
                 e.printStackTrace();
             }
             
-            UpdaterWindow window = new UpdaterWindow(currentVersion, mcVersion, loader, versionState, modsPath);
+            UpdaterWindow window = new UpdaterWindow(currentVersion, mcVersion, loader, versionState, instancePath + "/mods");
             window.setVisible(true);
         });
     }

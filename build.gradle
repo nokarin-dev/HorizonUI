@@ -21,7 +21,7 @@ dependencies {
 }
 
 shadowJar {
-    archiveBaseName.set("HorizonUI-Updater")
+    archiveBaseName.set("HorizonUI.Updater")
     archiveClassifier.set("")
     manifest {
         attributes(
