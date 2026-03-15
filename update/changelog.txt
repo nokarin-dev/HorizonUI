@@ -1,4 +1,16 @@
-CHANGELOG - HORIZONUI 1.0.0-BETA.4
+CHANGELOG - HORIZONUI 1.0.0-BETA.5 | HIGH
+[ UI / LAYOUT ]
+- Removed custom OptionsScreen.
+- Introducing new HorizonUI mods config UI.
+- Fixed main menu fallback to default ui.
+
+[ UPDATER ]
+- Added updater to HorizonUI.
+- Added integrity check to updater before update HorizonUI to prevent vulnerability.
+
+==================================================================
+
+CHANGELOG - HORIZONUI 1.0.0-BETA.4 | MEDIUM
 [ INTEGRATION ]
 - Added Replay Viewer button from ReplayMod.
 - Added button to open Sodium Screen.

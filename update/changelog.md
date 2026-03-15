@@ -11,6 +11,7 @@ All notable changes to HorizonUI will be documented here.
 ### Stable Releases
 
 ### Beta Releases
+- **v1.0.0.beta-5 - 2026-03-15** - [ HIGH ] Introduces new HorizonUI configuration UI. Removed OptionsScreen. Integrated updater with an integrity verification system. Fixed main menu fallback to default ui. etc.
 - **v1.0.0-beta.4 - 2026-02-16** - [ MEDIUM ] Integration ReplayMod and Sodium Mods. Bug fix. Improved options screen GUI.
 - **v1.0.0-beta.3 - 2026-01-27** - [ CRITICAL HOTFIX ] Fix title screen crash.
 - **v1.0.0-beta.2 - 2026-01-26** - [ MEDIUM ] Fix lag issue and background still render on pause screen. Optimize background rendering. Introduced new Options Screen UI [EXPERIIMENTAL].
@@ -20,6 +21,16 @@ All notable changes to HorizonUI will be documented here.
 ## Stable Release Versions
 
 ## Beta Release Versions
+## HorizonUI 1.0.0-BETA.5 - 2026-03-15
+### UI / Layout
+- Removed custom OptionsScreen.
+- Introducing new HorizonUI mods config UI.
+- Fixed main menu fallback to default ui.
+
+### Updater
+- Added updater to HorizonUI.
+- Added integrity check to updater before update HorizonUI to prevent vulnerability.
+
 ## HorizonUI 1.0.0-BETA.4 - 2026-03-00
 ### Integration
 - Added Replay Viewer button from ReplayMod.
