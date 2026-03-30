@@ -10,7 +10,7 @@
   "horizonui.menu.support": "Support saya di ko-fi.",
   "horizonui.menu.feedback": "Feedback HorizonUI.",
   "horizonui.menu.beta": "Ini Adalah Versi Beta HorizonUI: Java.",
-  "horizonui.menu.replaymod": "ReplayMod Studio",
+  "horizonui.menu.replaymod": "Lihat Replay",
 
   "horizonui.config.gui.reset.all": "Reset",
   "horizonui.config.back": "Kembali",
@@ -18,15 +18,23 @@
   "horizonui.config.next": "Selanjutnya",
   "horizonui.config.title": "Pemilihan Background",
   "horizonui.config.background.apply": "Menggunakan Background",
+  "horizonui.config.autoupdater": "Auto Updater",
+  "horizonui.config.autoupdater.description": "Automatis mengecek update HorizonUI ketika dijalankan.",
+  "horizonui.config.autoupdater.on": "Nyala",
+  "horizonui.config.autoupdater.off": "Mati",
 
   "horizonui.options.credits": "Kredit",
   "horizonui.options.back": "Kembali",
 
-  "horizonui.rpc.connect": "Discord RPC connected.",
-  "horizonui.rpc.loaded": "Loaded Discord RPC (Logged in as %2$s)",
-  "horizonui.rpc.error.update": "Cannot update presence, not connected to Discord.",
-  "horizonui.rpc.error.connection": "Failed to connect to Discord RPC.",
-  "horizonui.rpc.error.client": "No Discord client detected.",
-  "horizonui.rpc.error.ipc": "Discord RPC Failed to load, and has been shutdown: %1$s",
-  "horizonui.rpc.close": "Shut Down Discord RPC..."
+  "horizonui.log.error.verbose": "Nyalakan verbbose mode untuk melihat detailnya.",
+
+  "horizonui.rpc.init": "Instalasi Discord RPC",
+  "horizonui.rpc.connecting": "Mencoba terhubung ke Discord (%1$s/%2$s)",
+  "horizonui.rpc.connect": "Discord RPC terkoneksi.",
+  "horizonui.rpc.loaded": "Discord RPC dimuat (Login sebagai %1$s)",
+  "horizonui.rpc.error.update": "Tidak bisa update presence, tidak terkoneksi ke Discord.",
+  "horizonui.rpc.error.connection": "Gagal terkoneksi ke Discord.",
+  "horizonui.rpc.error.client": "Tidak ada client discord terdeteksi.",
+  "horizonui.rpc.error.ipc": "Discord RPC gagal untuk di load, dan telah dimatikan: %1$s",
+  "horizonui.rpc.close": "Mematikan Discord RPC..."
 }

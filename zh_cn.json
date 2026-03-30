@@ -10,7 +10,7 @@
   "horizonui.menu.support": "在 ko-fi 上支持我。",
   "horizonui.menu.feedback": "关于HorizonUI的反馈。",
   "horizonui.menu.beta": "这是 HorizonUI：Java 的测试版。",
-  "horizonui.menu.replaymod": "ReplayMod Studio",
+  "horizonui.menu.replaymod": "Replay Viewer",
 
   "horizonui.config.gui.reset.all": "重置",
   "horizonui.config.back": "返回",
@@ -18,11 +18,20 @@
   "horizonui.config.next": "下一步",
   "horizonui.config.title": "背景选择",
   "horizonui.config.background.apply": "使用背景",
+  "horizonui.config.autoupdater": "Auto Updater",
+  "horizonui.config.autoupdater.description": "Automatically check for HorizonUI updates on startup.",
+  "horizonui.config.autoupdater.on": "On",
+  "horizonui.config.autoupdater.off": "Off",
 
   "horizonui.options.credits": "制作团队",
+  "horizonui.options.back": "Back",
 
+  "horizonui.log.error.verbose": "Please enable verbose mode to view more details.",
+
+  "horizonui.rpc.init": "Initializing Discord RPC",
+  "horizonui.rpc.connecting": "Connecting to Discord (%1$s/%2$s)",
   "horizonui.rpc.connect": "Discord RPC 已连接。",
-  "horizonui.rpc.loaded": "已加载 Discord RPC (以 %2$s 身份登录)",
+  "horizonui.rpc.loaded": "已加载 Discord RPC (以 %1$s 身份登录)",
   "horizonui.rpc.error.update": "无法更新状态，未连接到 Discord。",
   "horizonui.rpc.error.connection": "无法连接到 Discord RPC。",
   "horizonui.rpc.error.client": "未检测到 Discord 客户端。",

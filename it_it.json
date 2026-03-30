@@ -10,7 +10,7 @@
   "horizonui.menu.support": "Support me on ko-fi.",
   "horizonui.menu.feedback": "Feedback about HorizonUI.",
   "horizonui.menu.beta": "This Is Beta Version Of HorizonUI: Java.",
-  "horizonui.menu.replaymod": "ReplayMod Studio",
+  "horizonui.menu.replaymod": "Replay Viewer",
 
   "horizonui.config.gui.reset.all": "Ripristina",
   "horizonui.config.back": "Indietro",
@@ -18,12 +18,20 @@
   "horizonui.config.next": "Successivo",
   "horizonui.config.title": "Selezione Sfondo",
   "horizonui.config.background.apply": "Applica Sfondo",
+  "horizonui.config.autoupdater": "Auto Updater",
+  "horizonui.config.autoupdater.description": "Automatically check for HorizonUI updates on startup.",
+  "horizonui.config.autoupdater.on": "On",
+  "horizonui.config.autoupdater.off": "Off",
 
   "horizonui.options.credits": "Credits",
   "horizonui.options.back": "Back",
-  
+
+  "horizonui.log.error.verbose": "Please enable verbose mode to view more details.",
+
+  "horizonui.rpc.init": "Initializing Discord RPC",
+  "horizonui.rpc.connecting": "Connecting to Discord (%1$s/%2$s)",
   "horizonui.rpc.connect": "Discord RPC connesso.",
-  "horizonui.rpc.loaded": "Discord RPC caricato (Connesso come %2$s)",
+  "horizonui.rpc.loaded": "Discord RPC caricato (Connesso come %1$s)",
   "horizonui.rpc.error.update": "Impossibile aggiornare la presenza, non connesso a Discord.",
   "horizonui.rpc.error.connection": "Connessione a Discord RPC fallita.",
   "horizonui.rpc.error.client": "Nessun client Discord rilevato.",
