@@ -2,17 +2,15 @@
 
 <div align="center">
 
-[![Github](https://img.shields.io/github/downloads/nokarin-dev/horizonui/total?logo=github&labelColor=grat&color=black)](https://github.com/nokarin-dev/horizonui/releases)
-[![Modrinth](https://img.shields.io/badge/dynamic/json?color=158000&label=downloads&prefix=+%20&query=downloads&url=https://api.modrinth.com/v2/project/90mpuiZs&logo=modrinth)](https://modrinth.com/mod/horizonui)
-[![CurseForge](https://cf.way2muchnoise.eu/full_999424_downloads.svg)](https://www.curseforge.com/minecraft/mc-mods/horizonui)
-![Environment](https://img.shields.io/badge/Enviroment-Client-purple)
-![Codacy Badge](https://app.codacy.com/project/badge/Grade/7a1df9d347724bdb9ca09869f5ad517e)
+![Environment](https://img.shields.io/badge/Enviroment-Client-purple?style=for-the-badge)
+[![License](https://img.shields.io/badge/License-ARR-green?style=for-the-badge)](https://github.com/nokarin-dev/HorizonUI/blob/main/LICENSE)
+[![Issues](https://img.shields.io/github/issues/nokarin-dev/horizonui?style=for-the-badge)](https://github.com/nokarin-dev/HorizonUI/issues)
+[![Release](https://img.shields.io/github/v/release/nokarin-dev/horizonui?style=for-the-badge)](https://github.com/nokarin-dev/HorizonUI/releases)
+[![Github Star](https://img.shields.io/github/stars/nokarin-dev/horizonui?style=for-the-badge)](https://github.com/nokarin-dev/horizonui)
 
-[![License](https://img.shields.io/badge/License-ARR-green)](https://github.com/nokarin-dev/HorizonUI/blob/main/LICENSE)
-[![Issues](https://img.shields.io/github/issues/nokarin-dev/horizonui)](https://github.com/nokarin-dev/HorizonUI/issues)
-[![Release](https://img.shields.io/github/v/release/nokarin-dev/horizonui)](https://github.com/nokarin-dev/HorizonUI/releases)
-[![Crowdin](https://badges.crowdin.net/horizonui/localized.svg)](https://crowdin.com/project/horizonui)
-[![Github Star](https://img.shields.io/github/stars/nokarin-dev/horizonui)](https://github.com/nokarin-dev/horizonui)
+[![Github](https://img.shields.io/github/downloads/nokarin-dev/horizonui/total?logo=github&labelColor=grat&color=black&style=for-the-badge)](https://github.com/nokarin-dev/horizonui/releases)
+[![Modrinth](https://img.shields.io/badge/dynamic/json?color=158000&label=downloads&prefix=+%20&query=downloads&url=https://api.modrinth.com/v2/project/90mpuiZs&logo=modrinth&style=for-the-badge)](https://modrinth.com/mod/horizonui)
+[![CurseForge](https://cf.way2muchnoise.eu/full_999424_downloads.svg?badge_style=for_the_badge)](https://www.curseforge.com/minecraft/mc-mods/horizonui)
 
 Bring a modern, clean, and customizable user interface to Minecraft.
 HorizonUI focuses on visual clarity, animated backgrounds, and layout refinement
