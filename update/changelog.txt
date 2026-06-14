@@ -1,3 +1,16 @@
+CHANGELOG - HORIZONUI 1.0.0-BETA.6 | CRITICAL
+[ ADDED ]
+- HorizonUI now support gif background.
+
+[ FIXED ]
+- Discord Rich Presence not working properly.
+- Memory leak on background system.
+
+[ CHANGED ]
+- Switching fps (frame per second) now real time
+
+==================================================================
+
 CHANGELOG - HORIZONUI 1.0.0-BETA.5 | HIGH
 [ UI / LAYOUT ]
 - Removed custom OptionsScreen.
