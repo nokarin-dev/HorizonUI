@@ -1,4 +1,4 @@
-package com.nokarin.util;
+package xyz.nokarin.util;
 
 public enum UpdateStage {
     PREPARE(10),

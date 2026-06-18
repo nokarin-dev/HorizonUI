@@ -1,4 +1,4 @@
-package com.nokarin.api;
+package xyz.nokarin.api;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

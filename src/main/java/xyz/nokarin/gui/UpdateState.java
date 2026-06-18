@@ -1,4 +1,4 @@
-package com.nokarin.gui;
+package xyz.nokarin.gui;
 
 public record UpdateState(String message, int progress, double speedKBps, long etaSeconds) {
     public UpdateState(String message, int progress) {

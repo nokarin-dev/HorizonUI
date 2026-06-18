@@ -1,4 +1,4 @@
-package com.nokarin.util;
+package xyz.nokarin.util;
 
 import java.util.EnumMap;
 

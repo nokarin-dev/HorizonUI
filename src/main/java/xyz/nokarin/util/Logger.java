@@ -1,4 +1,4 @@
-package com.nokarin.util;
+package xyz.nokarin.util;
 
 public class Logger {
     private static final String PREFIX = "[HorizonUI Updater]";

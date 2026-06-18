@@ -1,9 +1,13 @@
-package com.nokarin.handler;
+package xyz.nokarin.handler;
 
-import com.nokarin.api.ModrinthAPI;
-import com.nokarin.api.VersionInfo;
-import com.nokarin.gui.UpdateState;
-import com.nokarin.util.*;
+import xyz.nokarin.api.ModrinthAPI;
+import xyz.nokarin.api.VersionInfo;
+import xyz.nokarin.gui.UpdateState;
+import xyz.nokarin.util.*;
+import xyz.nokarin.util.HashVerifier;
+import xyz.nokarin.util.Logger;
+import xyz.nokarin.util.ProgressCalculator;
+import xyz.nokarin.util.UpdateStage;
 
 import java.io.File;
 import java.util.function.Consumer;

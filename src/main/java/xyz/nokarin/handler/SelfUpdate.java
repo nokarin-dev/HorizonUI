@@ -1,6 +1,6 @@
-package com.nokarin.handler;
+package xyz.nokarin.handler;
 
-import com.nokarin.util.Logger;
+import xyz.nokarin.util.Logger;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -11,15 +11,11 @@ import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 
 public class SelfUpdate {
-    private static final String GITHUB_RELEASE_API = "https://api.github.com/repos/YOUR_ORG/HorizonUI/releases/tags/updater";
+    private static final String GITHUB_RELEASE_API = "https://api.github.com/repos/nokarin-dev/HorizonUI/releases/tags/updater";
     private static final String UPDATER_PREFIX = "HorizonUI.Updater-";
     private static final String USER_AGENT = "HorizonUI-Updater/1.0";
 
-    private final String updaterPath;
-
-    public SelfUpdate(String updaterPath) {
-        this.updaterPath = updaterPath;
-    }
+    public SelfUpdate() {}
 
     public void checkAndUpdateAsync() {
         Thread thread = new Thread(() -> {
@@ -37,25 +33,48 @@ public class SelfUpdate {
     private void checkAndUpdate() throws Exception {
         Logger.info("Checking updater version...");
 
+        File currentJar = resolveCurrentJar();
+        if (currentJar == null) {
+            Logger.info("Could not resolve current jar path, skipping self-update");
+            return;
+        }
+
         GithubAsset latestAsset = fetchLatestAsset();
         if (latestAsset == null) {
             Logger.info("No updater asset found on GitHub");
             return;
         }
 
-        String latestVersion = parseVersion(latestAsset.name());
-        String currentVersion = parseVersion(new File(updaterPath).getName());
+        String latestVersion  = parseVersion(latestAsset.name());
+        String currentVersion = parseVersion(currentJar.getName());
 
         Logger.info("Updater current: " + currentVersion + " | latest: " + latestVersion);
 
-        if (currentVersion.equals(latestVersion)) {
+        if (compareVersions(currentVersion, latestVersion) >= 0) {
             Logger.info("Updater is already up to date");
             return;
         }
 
         Logger.info("Updater outdated, downloading in background...");
-        downloadAndReplace(latestAsset);
+        downloadAndReplace(latestAsset, currentJar);
         Logger.info("Updater updated to " + latestVersion);
+    }
+
+    private File resolveCurrentJar() {
+        try {
+            File f = new File(
+                    SelfUpdate.class.getProtectionDomain()
+                            .getCodeSource()
+                            .getLocation()
+                            .toURI()
+            );
+            if (f.isFile() && f.getName().endsWith(".jar")) {
+                return f;
+            }
+        } catch (Exception e) {
+            Logger.error("resolveCurrentJar failed", e);
+        }
+        return null;
     }
 
     private GithubAsset fetchLatestAsset() throws Exception {
@@ -109,11 +128,10 @@ public class SelfUpdate {
         return sb.toString();
     }
 
-    private void downloadAndReplace(GithubAsset asset) throws Exception {
-        File currentFile = new File(updaterPath);
-        File parentDir = currentFile.getParentFile();
+    private void downloadAndReplace(GithubAsset asset, File currentJar) throws Exception {
+        File parentDir = currentJar.getParentFile();
 
-        File tempFile = getTempFile(asset, parentDir);
+        File tempFile = downloadToTemp(asset, parentDir);
 
         File[] oldFiles = parentDir.listFiles((d, name) ->
                 name.startsWith(UPDATER_PREFIX) && name.endsWith(".jar"));
@@ -130,8 +148,8 @@ public class SelfUpdate {
         Files.move(tempFile.toPath(), finalFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
     }
 
-    private static File getTempFile(GithubAsset asset, File parentDir) throws URISyntaxException, IOException {
-        File tempFile = new File(parentDir, asset.name() + ".tmp");
+    private static File downloadToTemp(GithubAsset asset, File dir) throws URISyntaxException, IOException {
+        File tempFile = new File(dir, asset.name() + ".tmp");
 
         URL url = new URI(asset.downloadUrl()).toURL();
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -146,6 +164,34 @@ public class SelfUpdate {
             }
         }
         return tempFile;
+    }
+
+    private int compareVersions(String a, String b) {
+        String[] partsA = a.split("[.-]");
+        String[] partsB = b.split("[.-]");
+
+        int len = Math.max(partsA.length, partsB.length);
+        for (int i = 0; i < len; i++) {
+            String pa = i < partsA.length ? partsA[i] : "0";
+            String pb = i < partsB.length ? partsB[i] : "0";
+
+            boolean aIsNum = pa.matches("\\d+");
+            boolean bIsNum = pb.matches("\\d+");
+
+            int cmp;
+            if (aIsNum && bIsNum) {
+                cmp = Integer.compare(Integer.parseInt(pa), Integer.parseInt(pb));
+            } else if (aIsNum) {
+                cmp = 1;  // numeric > alpha (release > pre-release)
+            } else if (bIsNum) {
+                cmp = -1;
+            } else {
+                cmp = pa.compareToIgnoreCase(pb);
+            }
+
+            if (cmp != 0) return cmp;
+        }
+        return 0;
     }
 
     private String parseVersion(String fileName) {

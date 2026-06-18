@@ -1,4 +1,4 @@
-package com.nokarin.api;
+package xyz.nokarin.api;
 
 public record VersionInfo(String downloadUrl, String fileName, String versionNumber, String sha512) {
 }

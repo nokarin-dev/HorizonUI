@@ -1,11 +1,8 @@
-package com.nokarin.handler;
+package xyz.nokarin.handler;
 
-import com.nokarin.util.Logger;
+import xyz.nokarin.util.Logger;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 
 public class FileHandler {
     public boolean ensureModsDirectory(String modsPath) {

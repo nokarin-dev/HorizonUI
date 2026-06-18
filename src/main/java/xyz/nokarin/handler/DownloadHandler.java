@@ -1,17 +1,13 @@
-package com.nokarin.handler;
+package xyz.nokarin.handler;
 
-import com.nokarin.gui.UpdateState;
-import com.nokarin.util.Logger;
-import com.nokarin.util.ProgressCalculator;
-import com.nokarin.util.UpdateStage;
+import xyz.nokarin.gui.UpdateState;
+import xyz.nokarin.util.ProgressCalculator;
+import xyz.nokarin.util.UpdateStage;
 
-import javax.swing.*;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLConnection;
 import java.util.function.Consumer;
-import java.util.function.IntConsumer;
 
 public class DownloadHandler {
     private static final int BUFFER_SIZE = 8192;

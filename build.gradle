@@ -3,8 +3,8 @@ plugins {
     id "com.gradleup.shadow" version "9.3.1"
 }
 
-group = 'com.nokarin'
-version = '1.0.0'
+group = 'xyz.nokarin'
+version = '1.0.1'
 
 repositories {
     mavenCentral()
@@ -34,7 +34,7 @@ shadowJar {
                 'Implementation-Timestamp'    : new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
                 'Timestamp'                   : System.currentTimeMillis(),
                 'Built-On-Java'               : "${System.getProperty('java.vm.version')} (${System.getProperty('java.vm.vendor')})",
-                "Main-Class"                  : "com.nokarin.Main"
+                "Main-Class"                  : "xyz.nokarin.Main"
         )
     }
 

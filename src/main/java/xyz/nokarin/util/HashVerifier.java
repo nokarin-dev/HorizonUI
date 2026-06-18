@@ -1,4 +1,4 @@
-package com.nokarin.util;
+package xyz.nokarin.util;
 
 import java.io.File;
 import java.io.FileInputStream;
