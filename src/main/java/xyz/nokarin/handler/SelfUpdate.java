@@ -1,11 +1,12 @@
 package xyz.nokarin.handler;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 import xyz.nokarin.util.Logger;
 
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
@@ -15,19 +16,22 @@ public class SelfUpdate {
     private static final String UPDATER_PREFIX = "HorizonUI.Updater-";
     private static final String USER_AGENT = "HorizonUI-Updater/1.0";
 
-    public SelfUpdate() {}
+    private static final int CONNECT_TIMEOUT = 10_000;
+    private static final int READ_TIMEOUT = 20_000;
+
+    public SelfUpdate() {
+    }
 
     public void checkAndUpdateAsync() {
-        Thread thread = new Thread(() -> {
+        Thread t = new Thread(() -> {
             try {
                 checkAndUpdate();
             } catch (Exception e) {
-                Logger.error("Failed to self-update updater", e);
+                Logger.error("Self-update check failed", e);
             }
         }, "updater-self-update");
-
-        thread.setDaemon(true);
-        thread.start();
+        t.setDaemon(true);
+        t.start();
     }
 
     private void checkAndUpdate() throws Exception {
@@ -35,7 +39,7 @@ public class SelfUpdate {
 
         File currentJar = resolveCurrentJar();
         if (currentJar == null) {
-            Logger.info("Could not resolve current jar path, skipping self-update");
+            Logger.info("Not running from a jar - skipping self-update");
             return;
         }
 
@@ -45,13 +49,13 @@ public class SelfUpdate {
             return;
         }
 
-        String latestVersion  = parseVersion(latestAsset.name());
         String currentVersion = parseVersion(currentJar.getName());
+        String latestVersion = parseVersion(latestAsset.name());
 
         Logger.info("Updater current: " + currentVersion + " | latest: " + latestVersion);
 
         if (compareVersions(currentVersion, latestVersion) >= 0) {
-            Logger.info("Updater is already up to date");
+            Logger.info("Updater is up to date");
             return;
         }
 
@@ -63,14 +67,9 @@ public class SelfUpdate {
     private File resolveCurrentJar() {
         try {
             File f = new File(
-                    SelfUpdate.class.getProtectionDomain()
-                            .getCodeSource()
-                            .getLocation()
-                            .toURI()
+                    SelfUpdate.class.getProtectionDomain().getCodeSource().getLocation().toURI()
             );
-            if (f.isFile() && f.getName().endsWith(".jar")) {
-                return f;
-            }
+            if (f.isFile() && f.getName().endsWith(".jar")) return f;
         } catch (Exception e) {
             Logger.error("resolveCurrentJar failed", e);
         }
@@ -78,128 +77,96 @@ public class SelfUpdate {
     }
 
     private GithubAsset fetchLatestAsset() throws Exception {
-        String json = getJson();
+        String json = fetchString();
+        JSONObject release = new JSONObject(json);
+        JSONArray assets = release.optJSONArray("assets");
+        if (assets == null) return null;
 
-        int assetsStart = json.indexOf("\"assets\"");
-        if (assetsStart == -1) return null;
-
-        int searchFrom = assetsStart;
-        while (true) {
-            int nameIdx = json.indexOf("\"name\"", searchFrom);
-            if (nameIdx == -1) break;
-
-            int nameStart = json.indexOf("\"", nameIdx + 7) + 1;
-            int nameEnd = json.indexOf("\"", nameStart);
-            String name = json.substring(nameStart, nameEnd);
-
+        for (int i = 0; i < assets.length(); i++) {
+            JSONObject asset = assets.getJSONObject(i);
+            String name = asset.getString("name");
             if (name.startsWith(UPDATER_PREFIX) && name.endsWith(".jar")) {
-                int urlIdx = json.indexOf("\"browser_download_url\"", nameIdx);
-                int urlStart = json.indexOf("\"", urlIdx + 23) + 1;
-                int urlEnd = json.indexOf("\"", urlStart);
-                String downloadUrl = json.substring(urlStart, urlEnd);
-
-                return new GithubAsset(name, downloadUrl);
+                return new GithubAsset(name, asset.getString("browser_download_url"));
             }
-
-            searchFrom = nameIdx + 1;
         }
-
         return null;
     }
 
-    private static String getJson() throws URISyntaxException, IOException {
-        URL url = new URI(GITHUB_RELEASE_API).toURL();
-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-        conn.setRequestMethod("GET");
-        conn.setRequestProperty("User-Agent", USER_AGENT);
+    private String fetchString() throws Exception {
+        HttpURLConnection conn = openConnection(SelfUpdate.GITHUB_RELEASE_API);
         conn.setRequestProperty("Accept", "application/vnd.github+json");
-
-        if (conn.getResponseCode() != 200) {
-            throw new IOException("GitHub API returned: " + conn.getResponseCode());
+        try {
+            if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
+                throw new IOException("GitHub API returned: " + conn.getResponseCode());
+            }
+            StringBuilder sb = new StringBuilder();
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()))) {
+                String line;
+                while ((line = reader.readLine()) != null) sb.append(line);
+            }
+            return sb.toString();
+        } finally {
+            conn.disconnect();
         }
-
-        StringBuilder sb = new StringBuilder();
-        try (BufferedReader reader = new BufferedReader(
-                new InputStreamReader(conn.getInputStream()))) {
-            String line;
-            while ((line = reader.readLine()) != null) sb.append(line);
-        }
-
-        return sb.toString();
     }
 
     private void downloadAndReplace(GithubAsset asset, File currentJar) throws Exception {
-        File parentDir = currentJar.getParentFile();
+        File dir = currentJar.getParentFile();
+        File tmp = new File(dir, asset.name() + ".tmp");
 
-        File tempFile = downloadToTemp(asset, parentDir);
+        HttpURLConnection conn = openConnection(asset.downloadUrl());
+        try (InputStream in = new BufferedInputStream(conn.getInputStream());
+             FileOutputStream out = new FileOutputStream(tmp)) {
+            byte[] buf = new byte[8192];
+            int n;
+            while ((n = in.read(buf)) != -1) out.write(buf, 0, n);
+        } finally {
+            conn.disconnect();
+        }
 
-        File[] oldFiles = parentDir.listFiles((d, name) ->
-                name.startsWith(UPDATER_PREFIX) && name.endsWith(".jar"));
-
-        if (oldFiles != null) {
-            for (File old : oldFiles) {
-                if (!old.delete()) {
-                    Logger.error("Failed to delete old updater: " + old.getName());
-                }
+        // Remove old updater jars
+        File[] old = dir.listFiles((d, name) -> name.startsWith(UPDATER_PREFIX) && name.endsWith(".jar"));
+        if (old != null) {
+            for (File f : old) {
+                if (!f.delete()) Logger.warn("Could not delete old updater: " + f.getName());
             }
         }
 
-        File finalFile = new File(parentDir, asset.name());
-        Files.move(tempFile.toPath(), finalFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+        Files.move(tmp.toPath(), new File(dir, asset.name()).toPath(), StandardCopyOption.REPLACE_EXISTING);
     }
 
-    private static File downloadToTemp(GithubAsset asset, File dir) throws URISyntaxException, IOException {
-        File tempFile = new File(dir, asset.name() + ".tmp");
-
-        URL url = new URI(asset.downloadUrl()).toURL();
+    private HttpURLConnection openConnection(String urlString) throws Exception {
+        URL url = new URI(urlString).toURL();
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestProperty("User-Agent", USER_AGENT);
-
-        try (InputStream in = new BufferedInputStream(conn.getInputStream());
-             FileOutputStream out = new FileOutputStream(tempFile)) {
-            byte[] buffer = new byte[8192];
-            int read;
-            while ((read = in.read(buffer)) != -1) {
-                out.write(buffer, 0, read);
-            }
-        }
-        return tempFile;
+        conn.setConnectTimeout(CONNECT_TIMEOUT);
+        conn.setReadTimeout(READ_TIMEOUT);
+        conn.setInstanceFollowRedirects(true);
+        return conn;
     }
 
     private int compareVersions(String a, String b) {
-        String[] partsA = a.split("[.-]");
-        String[] partsB = b.split("[.-]");
-
-        int len = Math.max(partsA.length, partsB.length);
+        String[] pa = a.split("[.\\-]");
+        String[] pb = b.split("[.\\-]");
+        int len = Math.max(pa.length, pb.length);
         for (int i = 0; i < len; i++) {
-            String pa = i < partsA.length ? partsA[i] : "0";
-            String pb = i < partsB.length ? partsB[i] : "0";
-
-            boolean aIsNum = pa.matches("\\d+");
-            boolean bIsNum = pb.matches("\\d+");
-
+            String sa = i < pa.length ? pa[i] : "0";
+            String sb = i < pb.length ? pb[i] : "0";
+            boolean an = sa.matches("\\d+"), bn = sb.matches("\\d+");
             int cmp;
-            if (aIsNum && bIsNum) {
-                cmp = Integer.compare(Integer.parseInt(pa), Integer.parseInt(pb));
-            } else if (aIsNum) {
-                cmp = 1;  // numeric > alpha (release > pre-release)
-            } else if (bIsNum) {
-                cmp = -1;
-            } else {
-                cmp = pa.compareToIgnoreCase(pb);
-            }
-
+            if (an && bn) cmp = Integer.compare(Integer.parseInt(sa), Integer.parseInt(sb));
+            else if (an) cmp = 1;
+            else if (bn) cmp = -1;
+            else cmp = sa.compareToIgnoreCase(sb);
             if (cmp != 0) return cmp;
         }
         return 0;
     }
 
     private String parseVersion(String fileName) {
-        return fileName
-                .replace(UPDATER_PREFIX, "")
-                .replace(".jar", "")
-                .trim();
+        return fileName.replace(UPDATER_PREFIX, "").replace(".jar", "").trim();
     }
 
-    private record GithubAsset(String name, String downloadUrl) {}
+    private record GithubAsset(String name, String downloadUrl) {
+    }
 }

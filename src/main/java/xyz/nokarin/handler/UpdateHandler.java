@@ -4,10 +4,6 @@ import xyz.nokarin.api.ModrinthAPI;
 import xyz.nokarin.api.VersionInfo;
 import xyz.nokarin.gui.UpdateState;
 import xyz.nokarin.util.*;
-import xyz.nokarin.util.HashVerifier;
-import xyz.nokarin.util.Logger;
-import xyz.nokarin.util.ProgressCalculator;
-import xyz.nokarin.util.UpdateStage;
 
 import java.io.File;
 import java.util.function.Consumer;
@@ -43,13 +39,11 @@ public class UpdateHandler {
 
     public VersionInfo checkForUpdates() throws Exception {
         Logger.info("Checking for updates...");
-        Logger.info("Current: " + currentVersion +
-                " | MC: " + mcVersion +
-                " | Loader: " + loader);
+        Logger.info("Current: " + currentVersion + " | MC: " + mcVersion + " | Loader: " + loader);
 
         VersionInfo latest = api.findLatestVersion(loader, mcVersion, versionState);
         if (latest == null) {
-            Logger.info("No compatible version found");
+            Logger.info("No compatible version found on Modrinth");
             return null;
         }
 
@@ -59,64 +53,39 @@ public class UpdateHandler {
             return null;
         }
 
-        Logger.info("Update found: " + latest.versionNumber());
+        Logger.info("Update found: " + latest.versionNumber() + " (" + latest.fileName() + ")");
         return latest;
     }
 
-    public void performUpdate(
-            VersionInfo versionInfo,
-            Consumer<UpdateState> callback
-    ) throws Exception {
-        ProgressCalculator calculator = new ProgressCalculator();
+    public void performUpdate(VersionInfo versionInfo, Consumer<UpdateState> callback) throws Exception {
+        ProgressCalculator calc = new ProgressCalculator();
 
+        // Prepare
         fileHandler.ensureModsDirectory(modsPath);
-        calculator.update(UpdateStage.PREPARE, 100);
-        callback.accept(new UpdateState(
-                "Preparing update...",
-                calculator.getTotalProgress(),
-                0,
-                0
-        ));
+        calc.update(UpdateStage.PREPARE, 100);
+        callback.accept(new UpdateState("Preparing update...", calc.getTotalProgress()));
 
+        // Delete old versions
         fileHandler.deleteOldVersions(modsPath);
-        calculator.update(UpdateStage.DELETE_OLD, 100);
-        callback.accept(new UpdateState(
-                "Removing old versions...",
-                calculator.getTotalProgress(),
-                0,
-                0
-        ));
+        calc.update(UpdateStage.DELETE_OLD, 100);
+        callback.accept(new UpdateState("Removed old version files", calc.getTotalProgress()));
 
+        // Download
         File target = new File(modsPath, versionInfo.fileName());
-        downloadHandler.downloadFile(
-                versionInfo.downloadUrl(),
-                target.getAbsolutePath(),
-                calculator,
-                callback
-        );
+        downloadHandler.downloadFile(versionInfo.downloadUrl(), target.getAbsolutePath(), calc, callback);
 
-        calculator.update(UpdateStage.VERIFY, 50);
-        callback.accept(new UpdateState(
-                "Verifying file integrity...",
-                calculator.getTotalProgress(),
-                0,
-                0
-        ));
+        // Verify
+        calc.update(UpdateStage.VERIFY, 50);
+        callback.accept(new UpdateState("Verifying file integrity...", calc.getTotalProgress(), true));
 
         if (!HashVerifier.verifySHA512(target, versionInfo.sha512())) {
             target.delete();
-            throw new Exception("Integrity check failed");
+            throw new Exception("Integrity check failed - file may be corrupt");
         }
 
-        calculator.update(UpdateStage.VERIFY, 100);
-
-        calculator.update(UpdateStage.FINALIZE, 100);
-        callback.accept(new UpdateState(
-                "Finalizing...",
-                calculator.getTotalProgress(),
-                0,
-                0
-        ));
+        calc.update(UpdateStage.VERIFY, 100);
+        calc.update(UpdateStage.FINALIZE, 100);
+        callback.accept(new UpdateState("Finalizing...", calc.getTotalProgress()));
 
         Logger.info("Update completed successfully.");
     }
