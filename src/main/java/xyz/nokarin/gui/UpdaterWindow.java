@@ -352,7 +352,8 @@ public class UpdaterWindow extends JFrame {
             Graphics2D g2 = (Graphics2D) g.create();
             g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-            int w = getWidth(), h = getHeight(), arc = h;
+            int w = getWidth();
+            int h = getHeight();
 
             // Background
             g2.setColor(BG_DARK);
@@ -360,12 +361,12 @@ public class UpdaterWindow extends JFrame {
 
             // Track
             g2.setColor(TRACK_BG);
-            g2.fillRoundRect(0, 0, w, h, arc, arc);
+            g2.fillRoundRect(0, 0, w, h, h, h);
 
             if (indeterminate) {
-                paintIndeterminate(g2, w, h, arc);
+                paintIndeterminate(g2, w, h, h);
             } else {
-                paintDeterminate(g2, w, h, arc);
+                paintDeterminate(g2, w, h, h);
             }
 
             g2.dispose();
@@ -379,7 +380,7 @@ public class UpdaterWindow extends JFrame {
             Color c2 = error ? new Color(0xFF, 0x88, 0x88) : ACCENT_BRIGHT;
 
             g2.setClip(new RoundRectangle2D.Float(0, 0, w, h, arc, arc));
-            g2.setPaint(new GradientPaint(0, 0, c1, Math.max(fillW, 1), 0, c2));
+            g2.setPaint(new GradientPaint(0, 0, c1, fillW, 0, c2));
             g2.fillRoundRect(0, 0, fillW, h, arc, arc);
 
             // Shimmer

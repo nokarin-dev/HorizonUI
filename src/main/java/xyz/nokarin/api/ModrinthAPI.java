@@ -27,7 +27,6 @@ public class ModrinthAPI {
 
             String versionType = version.getString("version_type");
             if (versionState.equalsIgnoreCase("release") && !versionType.equals("release")) continue;
-
             if (!isLoaderCompatible(version, loader)) continue;
             if (!isGameVersionCompatible(version, mcVersion)) continue;
 
@@ -39,7 +38,9 @@ public class ModrinthAPI {
                     file.getString("url"),
                     file.getString("filename"),
                     version.getString("version_number"),
-                    file.getJSONObject("hashes").getString("sha512")
+                    file.getJSONObject("hashes").getString("sha512"),
+                    null,
+                    "Modrinth"
             );
         }
 
@@ -81,15 +82,13 @@ public class ModrinthAPI {
                 conn.disconnect();
                 conn = openConnection(location);
             }
-
             if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
                 throw new IOException("Modrinth API returned " + conn.getResponseCode());
             }
-
             StringBuilder sb = new StringBuilder();
-            try (BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()))) {
+            try (BufferedReader r = new BufferedReader(new InputStreamReader(conn.getInputStream()))) {
                 String line;
-                while ((line = reader.readLine()) != null) sb.append(line);
+                while ((line = r.readLine()) != null) sb.append(line);
             }
             return sb.toString();
         } finally {
