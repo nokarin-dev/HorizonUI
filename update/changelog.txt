@@ -1,3 +1,19 @@
+CHANGELOG - HORIZONUI 1.0.0-BETA.8 | HIGH
+
+[ ADDED ]
+
+- Now tooltip extension will show creator.
+- Now static extension supported without number namespace (background1.png > background.png).
+
+[ CHANGED ]
+
+- Rounding all button background on title screen.
+- Improve background rendering performance.
+- Improve image decode performance.
+- GIF now load faster
+
+==================================================================
+
 CHANGELOG - HORIZONUI 1.0.0-BETA.6 | CRITICAL
 [ ADDED ]
 - HorizonUI now support gif background.

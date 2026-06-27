@@ -15,6 +15,7 @@ All notable changes to HorizonUI will be documented here.
 
 ### Beta Releases
 
+- **v1.0.0-beta.8 - 2026-06-28** - [ HIGH ] Improve background rendering, image decode, gif load time, added creator to extension tooltip, supported static background without number namespace, rounding all buttons.
 - **v1.0.0-beta.6 - 2026-06-14** - [ CRITICAL ] Fixed memory leak on background system, Fixed discord rpc not working properly, HorizonUI now support gif background, Switching fps now realtime.
 - **v1.0.0.beta-5 - 2026-03-15** - [ HIGH ] Introduces new HorizonUI configuration UI. Removed OptionsScreen. Integrated updater with an integrity verification system. Fixed main menu fallback to default ui. etc.
 - **v1.0.0-beta.4 - 2026-02-16** - [ MEDIUM ] Integration ReplayMod and Sodium Mods. Bug fix. Improved options screen GUI.
@@ -26,6 +27,20 @@ All notable changes to HorizonUI will be documented here.
 ## Stable Release Versions
 
 ## Beta Release Versions
+
+## HorizonUI 1.0.0-BETA.8 - 2026-06-28
+
+### Added
+
+- Now tooltip extension will show creator.
+- Now static extension supported without number namespace (background1.png > background.png).
+
+### Changed
+
+- Rounding all button background on title screen.
+- Improve background rendering performance.
+- Improve image decode performance.
+- GIF now load faster
 
 ## HorizonUI 1.0.0-BETA.6 - 2026-06-14
 

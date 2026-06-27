@@ -11,10 +11,10 @@
         "1.21.4-latest": "v1.0.1",
         "1.21.3-latest": "v1.0.1",
         "1.21.2-latest": "v1.0.1",
-        "1.21.1-latest": "v1.0.0-beta.6",
-        "1.21.1-recommended": "v1.0.0-beta.6",
-        "1.21-latest": "v1.0.0-beta.6",
-        "1.21-recommended": "v1.0.0-beta.6",
+        "1.21.1-latest": "v1.0.0-beta.8",
+        "1.21.1-recommended": "v1.0.0-beta.8",
+        "1.21-latest": "v1.0.0-beta.8",
+        "1.21-recommended": "v1.0.0-beta.8",
         "1.20.6-latest": "v1.0.1",
         "1.20.5-latest": "v1.0.1",
         "1.20.4-latest": "v1.0.1",
@@ -34,6 +34,7 @@
     "1.21.3": {},
     "1.21.2": {},
     "1.21.1": {
+        "v1.0.0-beta.8": "[ HIGH ] Improve background rendering, image decode, gif load time, added creator to extension tooltip, supported static background without number namespace, rounding all buttons.",
         "v1.0.0-beta.6": "[ CRITICAL ] Fixed memory leak on background system, Fixed discord rpc not working properly, HorizonUI now support gif background, Switching fps now realtime.",
         "v1.0.0-beta.5": "[ HIGH ] Introduces new HorizonUI configuration UI. Removed OptionsScreen. Integrated updater with an integrity verification system. Fixed main menu fallback to default ui. etc.",
         "v1.0.0-beta.4": "[ MEDIUM ] Integration ReplayMod and Sodium Mods. Bug fix. Improved options screen GUI.",
@@ -43,6 +44,7 @@
         "v1.0.0-beta": "Initial beta release. Fixed Forge mixin-related crash. Implemented ImageSTB rendering. Introduced new title screen UI. Added auto-update toggle. Added update notification system."
     },
     "1.21": {
+        "v1.0.0-beta.8": "[ HIGH ] Improve background rendering, image decode, gif load time, added creator to extension tooltip, supported static background without number namespace, rounding all buttons.",
         "v1.0.0-beta.6": "[ CRITICAL ] Fixed memory leak on background system, Fixed discord rpc not working properly, HorizonUI now support gif background.",
         "v1.0.0-beta.5": "[ HIGH ] Introduces new HorizonUI configuration UI. Removed OptionsScreen. Integrated updater with an integrity verification system. Fixed main menu fallback to default ui. etc.",
         "v1.0.0-beta.4": "[ MEDIUM ] Integration ReplayMod and Sodium Mods. Bug fix. Improved options screen GUI.",
