@@ -15,7 +15,7 @@ All notable changes to HorizonUI will be documented here.
 
 ### Beta Releases
 
-- **v1.0.0-beta.9 - 2026-07-30** - [ HIGH ] Background animation runs much lighter on low-end PCs. Fixed memory buildup when switching backgrounds. Sub-menu screens no longer keep decoding frames. Fixed JPG color tint and settings thumbnail glitches. Redesigned settings screen with sidebar navigation and expanded Discord/General options.
+- **v1.0.0-beta.9 - 2026-08-01** - [ HIGH ] Background animation runs much lighter on low-end PCs. Fixed memory buildup when switching backgrounds. Sub-menu screens no longer keep decoding frames. Fixed JPG color tint and settings thumbnail glitches. Redesigned settings screen with sidebar navigation and expanded Discord/General options.
 - **v1.0.0-beta.8 - 2026-06-28** - [ HIGH ] Improve background rendering, image decode, gif load time, added creator to extension tooltip, supported static background without number namespace, rounding all buttons.
 - **v1.0.0-beta.6 - 2026-06-14** - [ CRITICAL ] Fixed memory leak on background system, Fixed discord rpc not working properly, HorizonUI now support gif background, Switching fps now realtime.
 - **v1.0.0.beta-5 - 2026-03-15** - [ HIGH ] Introduces new HorizonUI configuration UI. Removed OptionsScreen. Integrated updater with an integrity verification system. Fixed main menu fallback to default ui. etc.
@@ -29,7 +29,7 @@ All notable changes to HorizonUI will be documented here.
 
 ## Beta Release Versions
 
-## HorizonUI 1.0.0-BETA.9 - 2026-07-30
+## HorizonUI 1.0.0-BETA.9 - 2026-08-01
 
 ### Added
 
