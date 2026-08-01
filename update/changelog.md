@@ -15,6 +15,7 @@ All notable changes to HorizonUI will be documented here.
 
 ### Beta Releases
 
+- **v1.0.0-beta.9 - 2026-07-30** - [ HIGH ] Background animation runs much lighter on low-end PCs. Fixed memory buildup when switching backgrounds. Sub-menu screens no longer keep decoding frames. Fixed JPG color tint and settings thumbnail glitches. Redesigned settings screen with sidebar navigation and expanded Discord/General options.
 - **v1.0.0-beta.8 - 2026-06-28** - [ HIGH ] Improve background rendering, image decode, gif load time, added creator to extension tooltip, supported static background without number namespace, rounding all buttons.
 - **v1.0.0-beta.6 - 2026-06-14** - [ CRITICAL ] Fixed memory leak on background system, Fixed discord rpc not working properly, HorizonUI now support gif background, Switching fps now realtime.
 - **v1.0.0.beta-5 - 2026-03-15** - [ HIGH ] Introduces new HorizonUI configuration UI. Removed OptionsScreen. Integrated updater with an integrity verification system. Fixed main menu fallback to default ui. etc.
@@ -28,7 +29,36 @@ All notable changes to HorizonUI will be documented here.
 
 ## Beta Release Versions
 
-## HorizonUI 1.0.0-BETA.8 - 2026-06-28
+## HorizonUI 1.0.0-BETA.9 - 2026-07-30
+
+### Added
+
+- Settings screen now shows a live preview of the selected background.
+- Settings screen sidebar with Background, Performance, Discord, and General tabs.
+- Discord settings: armor, party, player head, dynamic images, templates, time format, server IP, player count, hardcore obfuscation, AFK timeout, coordinate precision.
+- General settings: Discord advanced options (auto reconnect, debug, verbose, join buttons, reconnect attempts/delay).
+
+### Changed
+
+- Animated backgrounds no longer re-decode every frame — much smoother on weaker hardware.
+- Switching backgrounds properly releases old frames from memory.
+- Background animation pauses on sub-menus (world select, options, etc.) so it doesn't eat FPS in the background.
+- Agreement screen no longer re-renders the entire menu behind it.
+- Agreement screen colors now match the rest of HorizonUI.
+- Settings screen redesigned with card layout, toggles, sliders, and chips.
+- Config screen uses blurred animated background.
+- New Customize tab for custom messages, template text, button labels, and config import/export.
+
+### Fixed
+
+- Incorrect colors on JPG backgrounds.
+- GIF backgrounds from resource packs failing to load ("Couldn't seek" error).
+- Pink/purple thumbnails in settings when many backgrounds are installed.
+- Discord RPC crash (`AFUNIXSocketAddress` missing) by bundling junixsocket.
+- Config screen RAM growing over time — thumbnail textures now downscaled, released properly, and no longer reloaded every frame.
+- Rounded UI panels showing gaps on left/right edges.
+
+## HorizonUI 1.0.0-BETA.8 - 2026-06-00
 
 ### Added
 
