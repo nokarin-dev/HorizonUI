@@ -13,6 +13,10 @@ All notable changes to HorizonUI will be documented here.
 
 ### Stable Releases
 
+### Release Candidates
+
+- **v1.0.0-rc.1 - 2026-08-02** - [ HIGH ] First release candidate for all supported versions. Fixed inaccurate colors on JPG and GIF backgrounds. Initial release for Minecraft 26.1 and 26.2.
+
 ### Beta Releases
 
 - **v1.0.0-beta.9 - 2026-08-01** - [ HIGH ] Background animation runs much lighter on low-end PCs. Fixed memory buildup when switching backgrounds. Sub-menu screens no longer keep decoding frames. Fixed JPG color tint and settings thumbnail glitches. Redesigned settings screen with sidebar navigation and expanded Discord/General options.
@@ -28,6 +32,16 @@ All notable changes to HorizonUI will be documented here.
 ## Stable Release Versions
 
 ## Beta Release Versions
+
+## HorizonUI 1.0.0-RC.1 - 2026-08-02
+
+### Added
+
+- Initial release for Minecraft 26.1 and 26.2.
+
+### Fixed
+
+- Inaccurate colors on JPG and GIF backgrounds after decode.
 
 ## HorizonUI 1.0.0-BETA.9 - 2026-08-01
 

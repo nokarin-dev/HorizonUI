@@ -1,3 +1,15 @@
+CHANGELOG - HORIZONUI 1.0.0-RC.1 | HIGH
+
+[ ADDED ]
+
+- Initial release for Minecraft 26.1 and 26.2.
+
+[ FIXED ]
+
+- Inaccurate colors on JPG and GIF backgrounds after decode.
+
+==================================================================
+
 CHANGELOG - HORIZONUI 1.0.0-BETA.9 | HIGH
 
 [ ADDED ]
@@ -46,62 +58,83 @@ CHANGELOG - HORIZONUI 1.0.0-BETA.8 | HIGH
 ==================================================================
 
 CHANGELOG - HORIZONUI 1.0.0-BETA.6 | CRITICAL
+
 [ ADDED ]
+
 - HorizonUI now support gif background.
 
 [ FIXED ]
+
 - Discord Rich Presence not working properly.
 - Memory leak on background system.
 
 [ CHANGED ]
+
 - Switching fps (frame per second) now real time
 
 ==================================================================
 
 CHANGELOG - HORIZONUI 1.0.0-BETA.5 | HIGH
+
 [ UI / LAYOUT ]
+
 - Removed custom OptionsScreen.
 - Introducing new HorizonUI mods config UI.
 - Fixed main menu fallback to default ui.
 
 [ UPDATER ]
+
 - Added updater to HorizonUI.
 - Added integrity check to updater before update HorizonUI to prevent vulnerability.
 
 ==================================================================
 
 CHANGELOG - HORIZONUI 1.0.0-BETA.4 | MEDIUM
+
 [ INTEGRATION ]
+
 - Added Replay Viewer button from ReplayMod.
 - Added button to open Sodium Screen.
 
 [ UI / LAYOUT ]
+
 - Fixed Auto scroll bug.
 - Fixed Button position corruption.
 - Fixed category switching.
 - Fixed widget event handling.
 
+[ UI / LAYOUT ]
+
+- Improved options screen UI.
+
 ==================================================================
 
 CHANGELOG - HORIZONUI 1.0.0-BETA.3 | CRITICAL HOTFIX
+
 [ MIXINS ]
+
 - Fixed game crash on title screen caused by improper screen initialization.
 
 ==================================================================
 
 CHANGELOG - HORIZONUI 1.0.0-BETA.2 | MEDIUM
+
 [ BACKGROUND ]
+
 - Fix lag issue when open another screen.
 - Fix background still render on pause screen.
 - Optimize background render for better performance.
 
 [ UI / LAYOUT ]
+
 - Override all minecraft options screen [EXPERIMENTAL].
 
 ==================================================================
 
 CHANGELOG - HORIZONUI 1.0.0-BETA.1 | LOW
+
 [ UI / LAYOUT ]
+
 - Revamped agreement screen UI.
 - Improved overall UI layout structure.
 - Fixed banner being overlapped by gradient background.
@@ -110,22 +143,29 @@ CHANGELOG - HORIZONUI 1.0.0-BETA.1 | LOW
 - Fixed beta notice and feedback button visibility in Clean Mode.
 
 [ EXTENSION ]
+
 - Added extension detection system.
 
 ==================================================================
 
-CHANGELOG - HORIZONUI 1.0.0-BETA | Initial Release
+CHANGELOG - HORIZONUI 1.0.0-BETA | LOW
+
 [ UI / LAYOUT ]
+
 - New title screen UI
 
 [ CONFIG ]
+
 - Auto-update toggle in settings
 
 [ UPDATER ]
+
 - Update notification system
 
 [ BACKGROUND ]
+
 - ImageSTB-based image rendering implementation
 
 [ MIXINS ]
+
 - Crash caused by Forge mixin conflicts
