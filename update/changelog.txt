@@ -1,3 +1,16 @@
+CHANGELOG - HORIZONUI 1.0.0-RC.2 | HIGH
+
+[ ADDED ]
+
+- Separate CurseForge distribution build (`*-cf.jar`) with the auto-updater removed, per CurseForge platform policy.
+
+[ FIXED ]
+
+- Forge and NeoForge 26.x crashing on launch due to bundled SLF4J/Gson conflicting with Java module layers.
+- 26.x JARs missing bundled libraries (abnormally small file size on Fabric, Forge, and NeoForge).
+
+==================================================================
+
 CHANGELOG - HORIZONUI 1.0.0-RC.1 | HIGH
 
 [ ADDED ]

@@ -15,6 +15,7 @@ All notable changes to HorizonUI will be documented here.
 
 ### Release Candidates
 
+- **v1.0.0-rc.2 - 2026-08-06** - [ HIGH ] Fixed Forge and NeoForge 26.x launch crashes and incomplete JARs. CurseForge builds ship without the auto-updater. Improved release pipeline and Java 25 compatibility for 26.x.
 - **v1.0.0-rc.1 - 2026-08-02** - [ HIGH ] First release candidate for all supported versions. Fixed inaccurate colors on JPG and GIF backgrounds. Initial release for Minecraft 26.1 and 26.2.
 
 ### Beta Releases
@@ -32,6 +33,17 @@ All notable changes to HorizonUI will be documented here.
 ## Stable Release Versions
 
 ## Beta Release Versions
+
+## HorizonUI 1.0.0-RC.2 - 2026-08-06
+
+### Added
+
+- Separate CurseForge distribution build (`*-cf.jar`) with the auto-updater removed, per CurseForge platform policy.
+
+### Fixed
+
+- Forge and NeoForge 26.x crashing on launch due to bundled SLF4J/Gson conflicting with Java module layers.
+- 26.x JARs missing bundled libraries (abnormally small file size on Fabric, Forge, and NeoForge).
 
 ## HorizonUI 1.0.0-RC.1 - 2026-08-02
 
