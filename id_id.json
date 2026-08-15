@@ -17,7 +17,7 @@
   "horizonui.config.prev": "Sebelumnya",
   "horizonui.config.next": "Selanjutnya",
   "horizonui.config.title": "Pemilihan Background",
-  "horizonui.config.background.apply": "Menggunakan Background",
+  "horizonui.config.background.apply": "Terapkan",
   "horizonui.config.autoupdater": "Auto Updater",
   "horizonui.config.autoupdater.description": "Automatis mengecek update HorizonUI ketika dijalankan.",
   "horizonui.config.autoupdater.on": "Nyala",

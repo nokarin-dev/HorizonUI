@@ -17,7 +17,7 @@
   "horizonui.config.prev": "Previous",
   "horizonui.config.next": "Next",
   "horizonui.config.title": "Background Selection",
-  "horizonui.config.background.apply": "Apply Background",
+  "horizonui.config.background.apply": "Apply",
   "horizonui.config.autoupdater": "Auto Updater",
   "horizonui.config.autoupdater.description": "Automatically check for HorizonUI updates on startup.",
   "horizonui.config.autoupdater.on": "On",
